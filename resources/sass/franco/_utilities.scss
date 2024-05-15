@@ -1,0 +1,346 @@
+// No seleccionable -----------------------------------------------------------------------------------------------
+// .f_noselectable: Estilo para no seleccionar contido
+
+.f_noselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+// Scroll --------------------------------------------------------------------------
+// .f_resizing: Mostrar scroll indicando que se esta redimencionando las medidas
+
+.f_scroll--resizing {
+    cursor: col-resize;
+}
+
+// Border --------------------------------------------------------------------------------------------------------------
+// .f_border: Borde en los cuatro lados
+// .f_border--top: Solo borde superior
+// .f_border--bottom: Solo borde inferior
+// .f_border--left: Solo borde izquierdo
+// .f_border--right: Solo borde derecho
+// .f_noborder: Sin bordes
+// .f_noborder--top: Sin borde superior
+// .f_noborder--bottom: Sin borde inferior
+// .f_noborder--left: Sin borde izquierdo
+// .f_noborder--right: Sin borde derecho
+
+.f_border{border: 1px solid $colorline;}
+.f_border--top{border-top: 1px solid $colorline;}
+.f_border--bottom{border-bottom: 1px solid $colorline;}
+.f_border--left{border-left: 1px solid $colorline;}
+.f_border--right{border-right: 1px solid $colorline;}
+.f_noborder{border: none !important;}
+.f_noborder--top{border-top: none !important;}
+.f_noborder--bottom{border-bottom: none !important;}
+.f_noborder--left{border-left: none !important;}
+.f_noborder--right{border-right: none !important;}
+
+
+
+// Ancho de caja (multiplos de 5 hasta 500) -----------------------------------------------------------------------------------------------
+//
+// .f_width_auto			: Ancho automatico
+// .f_width_#{$i}		: Ancho especificado en pixeles
+// .f_width_#{$i}p		: Ancho especificado en porcentaje
+// .f_maxwidth_#{$i}  	: Maximo ancho especificado en pixeles
+// .f_maxwidth_#{$i}imp	: Maximo ancho especificado en pixeles y en modo "Importante"
+// .f_minwidth_#{$i}  	: Minimo ancho especificado en pixeles
+// .f_minwidth_#{$i}imp	: Minimo ancho especificado en pixeles y en modo "Importante"
+// .f_widthsm_#{$i}p		: Ancho especificado en porcentaje para pantallas small
+// .f_minwidthsm_#{$i}p	: Minimo ancho especificado en porcentaje para pantallas small
+
+
+//@function isMultiple5($i){   
+//    @return ($i % 5 == 0);   
+//}
+//
+//@for $i from 20 through 500{  
+//    @if(isMultiple5($i)){    
+//        .maxwidth#{$i}imp{        
+//            max-width: 0px + $i !important; 
+//        }
+//    }
+//}
+
+.f_width_auto { width: auto; }
+.f_width_20  { width: 20px; }
+.f_width_25  { width: 25px; }
+.f_width_50  { width: 50px; }
+.f_width_75  { width: 75px; }
+.f_width_100 { width: 100px; }
+.f_width_125 { width: 125px; }
+.f_width_150 { width: 150px; }
+.f_width_175 { width: 175px; }
+.f_width_200 { width: 200px; }
+.f_width_225 { width: 225px; }
+.f_width_250 { width: 250px; }
+.f_width_275 { width: 275px; }
+.f_width_300 { width: 300px; }
+.f_width_325 { width: 325px; }
+.f_width_350 { width: 350px; }
+.f_width_375 { width: 375px; }
+.f_width_400 { width: 400px; }
+.f_width_425 { width: 425px; }
+.f_width_450 { width: 450px; }
+.f_width_475 { width: 475px; }
+.f_width_500 { width: 500px; }
+.f_width_600 { width: 600px; }
+.f_width_700 { width: 700px; }
+.f_width_800 { width: 800px; }
+.f_width_900 { width: 900px; }
+.f_width_1000 { width: 1000px; }
+
+.f_width_20p { width:20%; }
+.f_width_25p { width:25%; }
+.f_width_40p { width:40%; }
+.f_width_50p { width:50%; }
+.f_width_60p { width:60%; }
+.f_width_75p { width:75%; }
+.f_width_80p { width:80%; }
+.f_width_100p { width:100%; }
+
+.f_maxwidth_20  { max-width: 20px; }
+.f_maxwidth_25  { max-width: 25px; }
+.f_maxwidth_50  { max-width: 50px; }
+.f_maxwidth_75  { max-width: 75px; }
+.f_maxwidth_100 { max-width: 100px; }
+.f_maxwidth_125 { max-width: 125px; }
+.f_maxwidth_150 { max-width: 150px; }
+.f_maxwidth_175 { max-width: 175px; }
+.f_maxwidth_200 { max-width: 200px; }
+.f_maxwidth_225 { max-width: 225px; }
+.f_maxwidth_250 { max-width: 250px; }
+.f_maxwidth_275 { max-width: 275px; }
+.f_maxwidth_300 { max-width: 300px; }
+.f_maxwidth_325 { max-width: 325px; }
+.f_maxwidth_350 { max-width: 350px; }
+.f_maxwidth_375 { max-width: 375px; }
+.f_maxwidth_400 { max-width: 400px; }
+.f_maxwidth_425 { max-width: 425px; }
+.f_maxwidth_450 { max-width: 450px; }
+.f_maxwidth_475 { max-width: 475px; }
+.f_maxwidth_500 { max-width: 500px; }
+.f_maxwidth_600 { max-width: 600px; }
+.f_maxwidth_700 { max-width: 700px; }
+.f_maxwidth_800 { max-width: 800px; }
+.f_maxwidth_900 { max-width: 900px; }
+.f_maxwidth_1000 { max-width: 1000px; }
+
+.f_maxwidth_25imp  { max-width: 25px !important; }
+.f_maxwidth_40imp  { max-width: 40px !important; }
+.f_maxwidth_50imp  { max-width: 50px !important; }
+.f_maxwidth_75imp  { max-width: 75px !important; }
+.f_maxwidth_80imp  { max-width: 80px !important; }
+.f_maxwidth_100imp { max-width: 100px !important; }
+.f_maxwidth_125imp { max-width: 125px !important; }
+.f_maxwidth_150imp { max-width: 150px !important; }
+.f_maxwidth_200imp { max-width: 200px !important; }
+.f_maxwidth_250imp { max-width: 250px !important; }
+.f_maxwidth_300imp { max-width: 300px !important; }
+.f_maxwidth_400imp { max-width: 400px !important; }
+.f_maxwidth_500imp { max-width: 500px !important; }
+.f_maxwidth_750imp { max-width: 750px !important; }
+.f_maxwidth_1000imp { max-width: 1000px !important; }
+
+.f_minwidth_25  { min-width: 25px; }
+.f_minwidth_40  { min-width: 40px; }
+.f_minwidth_50  { min-width: 50px; }
+.f_minwidth_75  { min-width: 75px; }
+.f_minwidth_80  { min-width: 80px; }
+.f_minwidth_100 { min-width: 100px; }
+.f_minwidth_125 { min-width: 125px; }
+.f_minwidth_150 { min-width: 150px; }
+.f_minwidth_200 { min-width: 200px; }
+.f_minwidth_250 { min-width: 250px; }
+.f_minwidth_300 { min-width: 300px; }
+.f_minwidth_400 { min-width: 400px; }
+.f_minwidth_500 { min-width: 500px; }
+.f_minwidth_750 { min-width: 750px; }
+.f_minwidth_1000 { min-width: 1000px; }
+
+.f_minwidth_25imp  { min-width: 25px !important; }
+.f_minwidth_40imp  { min-width: 40px !important; }
+.f_minwidth_50imp  { min-width: 50px !important; }
+.f_minwidth_75imp  { min-width: 75px !important; }
+.f_minwidth_80imp  { min-width: 80px !important; }
+.f_minwidth_100imp { min-width: 100px !important; }
+.f_minwidth_125imp { min-width: 125px !important; }
+.f_minwidth_150imp { min-width: 150px !important; }
+.f_minwidth_200imp { min-width: 200px !important; }
+.f_minwidth_250imp { min-width: 250px !important; }
+.f_minwidth_300imp { min-width: 300px !important; }
+.f_minwidth_400imp { min-width: 400px !important; }
+.f_minwidth_500imp { min-width: 500px !important; }
+.f_minwidth_750imp { min-width: 750px !important; }
+.f_minwidth_1000imp { min-width: 1000px !important; }
+
+
+@media (max-width: map-get($breakpoints , sm ))
+{
+	.f_widthsm_25p { width:25%; }
+	.f_widthsm_50p { width:50%; }
+	.f_widthsm_75p { width:75%; }
+	.f_widthsm_100p { width:100%; }
+	
+	.f_minwidthsm_25p { min-width:25%; }
+	.f_minwidthsm_50p { min-width:50%; }
+	.f_minwidthsm_75p { min-width:75%; }
+	.f_minwidthsm_100p { min-width:100%; }
+}
+
+
+// Mostrar contenido en una sola linea --------------------------------------------------------------------------------------------------------
+// .f_nowrap: Mostrar contendio en una solo linea (Este debe ser acompañado con ancho de contenido. width, max-width)
+// .f_nowrap_#{$i} : Mostrar contendio en una sola linea con un ancho maximo especificado
+
+.f_nowrap {
+    max-width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.f_nowrap_25 { 
+	max-width: 25px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+.f_nowrap_40  { 
+	max-width: 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;  
+}
+.f_nowrap_50 { 
+	max-width: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+.f_nowrap_75 { 
+	max-width: 75px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+.f_nowrap_80 { 
+	max-width: 80px; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+.f_nowrap_100 { 
+	max-width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+.f_nowrap_125 { 
+	max-width: 125px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+.f_nowrap_150 { 
+	max-width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+.f_nowrap_200 { 
+	max-width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.f_nowrap_250 { 
+	max-width: 250px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.f_nowrap_300 { 
+	max-width: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.f_nowrap_400 { 
+	max-width: 400px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.f_nowrap_500 { 
+	max-width: 500px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.f_nowrap_750 { 
+	max-width: 750px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.f_nowrap_1000 { 
+	max-width: 1000px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+
+//[class^='f_nowrap']{
+//	overflow: hidden;
+//	text-overflow: ellipsis;
+//	white-space: nowrap;
+//}
+
+
+// Controlar desbordamiento -----------------------------------------------------------------------------------------------------------
+// .f_overflow_scroll-x: Mostrar scroll para visualizar contenido desbordado en el eje x
+
+.f_overflow_scroll-x{
+	width: 100%;
+    overflow-x: auto;
+}
+
+
+// Imagen --------------------------------------------------------------------------------------------------------------------------
+// .f_image--avatar-table : Imagen avatar para mostrar en las tablas
+// .f_image--ref : Imagen de referencia
+
+.f_image--avatar-table {
+	display: inline-block;
+	width: 1.4em;
+	height: 1.4em;
+	border: 0px;
+	border-radius: 50%;
+	background-size: contain;
+	background-color: #fff;
+	vertical-align: middle;
+}
+
+
+.f_image--ref {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 80px;
+	height: 80px;
+    padding: 4px;
+	font-size: 2em;
+	border: 1px solid $colorline;
+    //-webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+	//-moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    //box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+
+	img {
+		width: 100%;
+		object-fit: contain;
+	}
+}

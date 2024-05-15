@@ -1,0 +1,65 @@
+// ====================================== Estilo de acceso al sistema =============================================
+
+@import '../../franco/variables';
+@import '../../franco/base';
+@import '../../franco/container';
+@import '../../franco/components/alert';
+@import '../../franco/components/button';
+
+// Estilo del contenedor de contendio principal
+.f_content-access{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+// Estilo de login para moviles
+
+.f_access{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    padding: 2rem 1.3rem;
+    background-color: #fff;
+    box-shadow: 0 0 1px rgba(0,0,0,.125),0 1px 3px rgba(0,0,0,.2);
+    box-sizing: border-box;
+
+    .f_access__title{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+    }
+
+    .f_access__input-group{
+        display: flex;
+        padding: .5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: .3rem;
+
+        input {
+            min-width: 80px;
+            flex-grow: 1;
+            padding: 0 .5rem;
+            border: none;
+            outline: none;
+        }
+    }
+
+    .f_access__actions{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+
+// Estilo de login para pantallas de escritorio
+
+@media (min-width: map-get($breakpoints, sm)) {
+    .f_access{
+        width: 360px;
+    }
+}

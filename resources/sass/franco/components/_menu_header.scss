@@ -1,0 +1,539 @@
+/* ================= Menu del header - Estilo para pantallas de moviles =============== */
+
+// .f_menu: Estilo de menu para cabezera de pagina
+// .f_menu.f_menu--left: Estilo de menu flotante a la izquierda (Solo para pantallas de moviles)
+// .f_menu.f_menu--right: Estilo de menu flotante a la derecha (Solo para pantallas de moviles)
+// .f_menu.show_menu: Mostrar menu oculto (solo para pantallas de moviles)
+// .f_menu__btnToggle: Estilo de boton mostrar u ocultar menu (Solo para patallas de moviles)
+// .f_menu__list: Estilo de lista de menu
+// .f_menu__item: Estilo de item de lista de menu
+// .f_menu__item .f_menu__item--module: Estilo de item de lista de menu cuando este representa el nombre del modulo
+// .f_menu__item .f_menu__list.show_submenu: Mostrar submenu de item de lista de menu
+// .f_menu__item .expand_submenu: Estilo de flecha expandir item de lista de menu (Solo para pantallas de moviles)
+
+
+// Estilo del menu
+.f_menu {
+    flex: 1 1 100%;
+    width: 90%;
+    height: calc(100vh - #{$heightheadermain});
+    overflow-y: auto;
+    font-size: inherit;
+    position: absolute;
+    top: $heightheadermain;
+    display: none;
+
+    &.f_menu--left{
+        left: -150%;
+
+        &.show_menu{
+            display: block;
+            left: 0;
+            z-index: 1000;
+        }
+    }
+
+    &.f_menu--right{
+        right: 150%;
+
+        &.show_menu{
+            display: block;
+            right: 0;
+            z-index: 1000;
+        }
+    }
+}
+
+
+// Estilo del boton toggle del menu
+.f_menu__btnToggle{
+    display: inline-block;
+    font-size: 1.1rem;
+    border: none;
+    background-color: inherit;
+    color: $colortexthmenu;
+    cursor: pointer;
+}
+
+
+// Estilo de lista de menu
+.f_menu__list{
+    display: block;
+}
+
+
+// Estilo de item de lista de menu
+.f_menu__item{
+    display: block;
+    line-height: 46px;
+    min-height: 46px;
+    color: $colortexthmenu;
+    cursor: pointer;
+
+	&--module {
+		padding: 0px 1rem;
+	    font-size: 1rem;
+	    font-weight: bold;
+
+		&::before{
+			display: none !important;
+		}
+		
+		a{
+			display: inline-block;
+        	color: inherit;
+		}
+	}
+    
+    & a{
+        display: inline-block;
+        color: inherit;
+    }
+}
+
+
+// Estilo de la flecha expandir submenu
+.f_menu__item{
+    position: relative;
+
+    .expand_submenu{
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-right: 2px solid; 
+        border-bottom: 2px solid;
+        transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        color: $colortexthmenu;
+    }
+
+    &.active > .expand_submenu{
+        transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+}
+
+
+// Estilos de submenu
+.f_menu .f_menu__list .f_menu__list{
+    display: none;
+    width: 100%;
+
+    &.show_submenu{
+        display: block;
+    }
+}
+
+
+// Estilos de indentación de menu
+@mixin menuItemIdentation($width) {
+    content: "";
+    display: inline-block;
+    width: $width + px;
+    position: relative;
+    z-index: -1;
+}
+
+.f_menu__list .f_menu__item{
+    
+    &::before{@include menuItemIdentation(20);}
+    & > a{width: calc(100% - 20px);}
+}
+
+.f_menu__list .f_menu__list .f_menu__item{
+
+    &::before{@include menuItemIdentation(40);}
+    & > a{width: calc(100% - 40px);}
+}
+
+.f_menu__list .f_menu__list .f_menu__list .f_menu__item{
+    
+    &::before{@include menuItemIdentation(60);}
+    & > a{width: calc(100% - 60px);}
+}
+
+.f_menu__list .f_menu__list .f_menu__list .f_menu__list .f_menu__item{
+    
+    &::before{@include menuItemIdentation(80);}
+    & > a{width: calc(100% - 80px);}
+}
+
+
+// Estilos de color de fondo de menu
+
+.f_menu{
+    background-color: $colorbackhmenu;
+}
+
+.f_menu__list{
+    background-color: inherit;
+}
+
+.f_menu__list .f_menu__list{
+    background-color: $colorbackhsubmenumobilelevel1;
+}
+
+.f_menu__list .f_menu__list .f_menu__list{
+    background-color: $colorbackhsubmenumobilelevel2;
+}
+
+.f_menu__list .f_menu__list .f_menu__list .f_menu__list{
+    background-color: $colorbackhsubmenumobilelevel3;
+}
+
+
+
+/* ================= Menu del header - Estilo para pantallas medianas =============== */
+
+@media (min-width: map-get($breakpoints, sm)) { 
+	
+	// Estilo del menu
+
+    .f_menu {
+        width: 340px;
+		padding: 1rem 0;
+		-webkit-box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+        -moz-box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+		box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    }
+
+	// Estilo de lista de menu
+
+	.f_menu ul.f_menu__list {
+        font-size: .8rem;
+        font-weight: normal;
+    }
+
+
+    // Estilo de item de lista de menu
+
+	.f_menu__item{
+        line-height: 2.5rem;
+        min-height: auto;
+		color: $colortextmain;
+		
+		&--module {
+			
+			& a:hover{
+				color: $colortextmain;
+			}
+		}
+		
+		&.active{
+			font-weight: bold;
+		}
+	
+    }
+
+    .f_menu > .f_menu__list > .f_menu__item{
+        padding: 0 15px;
+
+        &:hover{
+            color: darken($colorbackhmenu, 2%);
+        }
+    }
+
+    .f_menu__item .f_menu__item:hover{
+        background-color: #ebebeb !important;
+    }
+
+    .f_menu__item .f_menu__item.parent_submenu{
+        margin: .3rem 0;
+
+        &:hover{
+			font-weight: bold;
+            background-color: $colorbackhsubmenu !important;
+        }
+    }
+
+
+    // Estilo de la flecha expandir submenu
+
+    .f_menu__item .expand_submenu{
+		top: 15px;
+        right: 15px;
+		color: $colortextmain;
+    }
+
+
+    // Estilos de submenu
+
+    .f_menu .f_menu__list .f_menu__list{
+		margin-bottom: .5rem;
+
+        .f_menu__item{
+            display: block;
+            color: $colortextmain;
+            line-height: 1.8rem;
+
+            & a{
+                color: $colortextmain;
+            }
+
+            &:hover{
+                background-color: inherit;
+            }
+        }
+    }
+
+    .f_menu > .f_menu__list > .f_menu__item > .f_menu__list{
+        min-width: 20rem;
+        display: none;
+
+        &.show_submenu{
+            display: block;
+        }
+    }
+
+
+
+    // Estilos de indentación de menu
+
+    .f_menu__list .f_menu__item{
+        
+        &::before{@include menuItemIdentation(0);}
+        & > a{width: 100%;}
+    }
+    
+    .f_menu__list .f_menu__list .f_menu__item{
+
+        &::before{@include menuItemIdentation(15);}
+        & > a{width: calc(100% - 15px);}
+    }
+    
+    .f_menu__list .f_menu__list .f_menu__list .f_menu__item{
+
+        &::before{@include menuItemIdentation(40);}
+        & > a{width: calc(100% - 40px);}
+    }
+    
+    .f_menu__list .f_menu__list .f_menu__list .f_menu__list .f_menu__item{
+        
+        &::before{@include menuItemIdentation(60);}
+        & > a{width: calc(100% - 60px);}
+    }
+
+
+    // Estilos de color de fondo de menu
+
+    .f_menu{
+        background-color: $colorbackmain;
+    }
+
+    .f_menu__list{
+        background-color: inherit;
+    }
+
+    .f_menu__list .f_menu__list{
+        background-color: $colorbackhsubmenu;
+    }
+
+    .f_menu__list .f_menu__list .f_menu__list{
+        background-color: inherit;
+    }
+
+    .f_menu__list .f_menu__list .f_menu__list .f_menu__list{
+        background-color: inherit;
+    }
+}
+
+
+
+
+/* ================= Menu del header - Estilo para pantallas de escritorio =============== */
+
+@media (min-width: map-get($breakpoints, lg)) { 
+    
+    // Estilo del menu
+
+    .f_menu {
+        display: inline-block;
+        vertical-align: top;
+        width: auto;
+        height: auto;
+		padding: 0;
+		color: $colortexthmenu;
+        overflow-y: initial;
+        position: static;
+		-webkit-box-shadow: none;
+        -moz-box-shadow: none;
+		box-shadow: none;
+
+        &.show_menu{
+            display: inline-block !important;
+        }
+    }
+
+
+    // Estilo del boton toggle del menu
+
+    .f_menu__btnToggle{
+        display: none;
+    }
+
+
+    // Estilo de lista de menu
+
+    .f_menu > .f_menu__list{
+        display: flex;
+    }
+
+	.f_menu ul.f_menu__list {
+        font-size: .8rem;
+        font-weight: normal;
+    }
+
+
+    // Estilo de item de lista de menu
+
+    .f_menu__item{
+        display: inline-block;
+        line-height: inherit;
+        min-height: auto;
+		color: $colortextmain;
+        cursor: pointer;
+		
+		&.active{
+			font-weight: normal;
+		}
+		
+		&--module {
+			
+			& a:hover{
+				color: $colortexthmenu;
+			}
+		}
+    }
+
+    .f_menu > .f_menu__list > .f_menu__item{
+        padding: 0 15px;
+		color: $colortexthmenu;
+
+        &:hover{
+			color: inherit;
+            background-color: darken($colorbackhmenu, 2%);
+        }
+    }
+
+    .f_menu__item .f_menu__item:hover{
+        background-color: #ebebeb !important;
+    }
+
+    .f_menu__item .f_menu__item.parent_submenu{
+        font-size: .7rem;
+        font-weight: bold;
+        margin: .3rem 0;
+
+        &:hover{
+            background-color: $colorbackhsubmenu !important;
+            cursor: default;
+        }
+    }
+
+
+    // Estilo de la flecha expandir submenu
+
+    .f_menu__item .expand_submenu{
+        display: none;
+    }
+
+
+    // Estilos de submenu
+
+    .f_menu .f_menu__list .f_menu__list{
+        display: block;
+
+        .f_menu__item{
+            display: block;
+            color: $colortexthsubmenu;
+            line-height: 1.8rem;
+
+            & a{
+                color: $colortexthsubmenu;
+            }
+
+            &:hover{
+                background-color: inherit;
+            }
+        }
+    }
+
+    .f_menu > .f_menu__list > .f_menu__item > .f_menu__list{
+        min-width: 20rem;
+        padding: .5rem 0;
+        position: absolute;
+        top: -1500px;
+        left: 0;
+        border: 1px solid #c9ccd2;
+        display: none;
+
+        &.show_submenu{
+            display: block;
+            //top: $heightheadermain;
+			top: initial;
+            z-index: 1000;
+        }
+    }
+
+    //.f_menu > .f_menu__list > .f_menu__item:hover > .f_menu__list{
+    //    display: block;
+    //    top: $heightheadermain;
+    //    z-index: 1001;
+    //}
+
+
+
+    // Estilos de indentación de menu
+
+    .f_menu__list .f_menu__item{
+        
+        &::before{@include menuItemIdentation(0);}
+        & > a{width: 100%;}
+    }
+    
+    .f_menu__list .f_menu__list .f_menu__item{
+
+        &::before{@include menuItemIdentation(15);}
+        & > a{width: calc(100% - 15px);}
+    }
+    
+    .f_menu__list .f_menu__list .f_menu__list .f_menu__item{
+
+        &::before{@include menuItemIdentation(40);}
+        & > a{width: calc(100% - 40px);}
+    }
+    
+    .f_menu__list .f_menu__list .f_menu__list .f_menu__list .f_menu__item{
+        
+        &::before{@include menuItemIdentation(60);}
+        & > a{width: calc(100% - 60px); }
+    }
+
+
+    // Estilos de color de fondo de menu
+
+    .f_menu{
+        background-color: inherit;
+    }
+
+    .f_menu__list{
+        background-color: inherit;
+    }
+
+    .f_menu__list .f_menu__list{
+        background-color: $colorbackhsubmenu;
+    }
+
+    .f_menu__list .f_menu__list .f_menu__list{
+        background-color: inherit;
+    }
+
+    .f_menu__list .f_menu__list .f_menu__list .f_menu__list{
+        background-color: inherit;
+    }
+}

@@ -1,0 +1,252 @@
+// Tabla ----------------------------------------------------------------------------------------------------------------------
+// .f_table	: Estilo general de tabla
+// .f_table.f_table--striped: Estilo de filas a colores
+// .f_table.f_table--list-item: Estilo de tabla para valores de atributos (field : value)
+// .f_table.f_table--hover: Se agregara evento hover a todas las filas
+// .f_table tr.f_oddeven: Solo a estas filas se le agregara el evento hover
+// .f_table tr.list_title: Esta fila sera contenedor de cabezeras de columnas de la tabla
+// .f_table tr.list_title_filter: Esta fila sera contenedor de etiquetas de filtro (input, select, ect)
+
+
+
+// Estilo de tabla
+
+table.f_table {
+    width: 100%;
+	border-collapse: separate !important;
+	border-spacing: 0px;
+	border-top: 1px solid rgb(215,215,215);
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+// Estilo de cabezera de tabla
+
+table.f_table > thead {
+	background-color: $colorbackthead;
+}
+
+// Estilo de fila de tabla
+
+table.f_table tr{
+    min-height: 22px;
+}
+
+table.f_table tr.f_oddeven {
+	color: $colortexttroddeven !important;
+}
+
+table.f_table tr.f_oddeven:hover {
+    background-color: $colorbacktrhover !important;
+}
+
+table.f_table.f_table--hover tbody tr:hover {
+    background-color: $colorbacktrhover !important;
+}
+
+table.f_table tr.list_title_filter {
+    background-color: $colorbackthead !important;
+}
+
+table.f_table tr.list_title {
+    background-color: $colorbackthead !important;
+    height: 26px !important;
+}
+
+table.f_table.f_table--striped > tbody > tr:nth-child(2n+1):not(.list_title){
+    background: $colorbacktreven;
+}
+
+table.f_table.f_table--striped > tbody > tr:nth-child(2n):not(.list_title){
+    background-color: $colorbacktrodd;
+}
+
+// Estilo de celda de tabla
+
+table.f_table td,
+table.f_table th,
+table.f_table tr.list_title td,
+table.f_table tr.list_title th {
+	font-size: $fontsizemain !important;
+	height: 22px;
+	line-height: 22px;
+	padding: 7px 8px;
+    border: none;
+    vertical-align: inherit;
+}
+
+table.f_table tr.list_title th,
+table.f_table tr.list_title td {
+    color: rgba(10, 20, 100, 0.9);
+    opacity: 0.8;
+    height: 24px;
+    font-weight: normal !important;
+    text-align: left;
+    border-bottom: 1px solid rgb(215,215,215);
+    vertical-align: middle;
+}
+
+table.f_table tr td:first-of-type,
+table.f_table tr th:first-of-type{
+    padding-left: 8px;
+}
+
+table.f_table tr td:last-of-type,
+table.f_table tr th:last-of-type{
+    padding-right: 8px;
+}
+
+table.f_table > tbody > tr:not(:last-child):not(.list_title) td {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+table.f_table tr:last-of-type td {
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+
+// Estilo de tabla para mostrar objeto clave => valor
+
+table.f_table.f_table--list-item{
+	padding-top: 1rem;
+}
+
+table.f_table.f_table--list-item tr{
+	display: flex;
+	flex-flow: row wrap;
+}
+
+table.f_table.f_table--list-item tr td,
+table.f_table.f_table--list-item tr th {
+	height: auto;
+	padding: 0 !important;
+	border-bottom: none !important;
+}
+
+table.f_table.f_table--list-item tr td:first-of-type,
+table.f_table.f_table--list-item tr th:first-of-type {
+	width: 100%;
+	color: #666;
+	
+	> .f_item_label {
+		display: inline-block;
+	}
+}
+
+table.f_table.f_table--list-item tr td:last-of-type,
+table.f_table.f_table--list-item tr th:last-of-type {
+	width: 100%;
+	
+	> .f_item_content{
+		margin-bottom: 1rem;
+	}
+}
+
+
+
+// Estilo de tabla para mostrar formulario
+
+table.f_table.f_table--form{
+	border: none !important;
+}
+
+table.f_table.f_table--form tr{
+	display: flex;
+	flex-flow: row wrap;
+}
+
+table.f_table.f_table--form tr td,
+table.f_table.f_table--form tr th {
+	height: auto;
+	padding: 0 !important;
+	border-bottom: none !important;
+}
+
+table.f_table.f_table--form tr td:first-of-type,
+table.f_table.f_table--form tr th:first-of-type {
+	width: 100%;
+	color: #666;
+	
+	> .f_item_label {
+		display: inline-block;
+	}
+}
+
+table.f_table.f_table--form tr td:last-of-type,
+table.f_table.f_table--form tr th:last-of-type {
+	width: 100%;
+	
+	> .f_item_content{
+		margin-bottom: 1rem;
+	}
+}
+
+
+/* ================= Tabla - Estilo para pantallas medianas o superior =============== */
+
+
+@media (min-width: map-get($breakpoints, sm)) {
+	
+	// Estilo de tabla para mostrar objeto clave => valor
+	
+	table.f_table.f_table--list-item{
+		padding-top: inherit;
+	}
+	
+	table.f_table.f_table--list-item tr{
+		display: table-row;
+	}
+	
+	table.f_table.f_table--list-item tr td,
+	table.f_table.f_table--list-item tr th {
+		padding: 5px 16px 5px 2px !important;
+		border-bottom: 1px solid rgb(215, 215, 215) !important;
+	}
+	
+	table.f_table.f_table--list-item tr td:first-of-type,
+	table.f_table.f_table--list-item tr th:first-of-type {
+		width: 0%;
+		min-width: 150px;
+	}
+	
+	table.f_table.f_table--list-item tr td:last-of-type,
+	table.f_table.f_table--list-item tr th:last-of-type {
+		width: 100%;
+		
+		> div.f_item_content{
+			margin-bottom: inherit;
+		}
+	}
+	
+	
+	
+	// Estilo de tabla para mostrar formulario
+	
+	table.f_table.f_table--form{
+		padding-top: inherit;
+	}
+	
+	table.f_table.f_table--form tr{
+		display: table-row;
+	}
+	
+	table.f_table.f_table--form tr td,
+	table.f_table.f_table--form tr th {
+		padding: 5px 16px 5px 2px !important;
+	}
+	
+	table.f_table.f_table--form tr td:first-of-type,
+	table.f_table.f_table--form tr th:first-of-type {
+		width: 0%;
+		min-width: 150px;
+	}
+	
+	table.f_table.f_table--form tr td:last-of-type,
+	table.f_table.f_table--form tr th:last-of-type {
+		width: 100%;
+		
+		> div.f_item_content{
+			margin-bottom: inherit;
+		}
+	}
+}

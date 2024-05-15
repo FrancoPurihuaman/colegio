@@ -1,0 +1,160 @@
+// Boton :  ----------------------------------------------------------------------------------------------------------------------------
+// .f_button : Estilo de boton igual al tema (este estilo es base para los demas)
+// .f_button.tight: Estilo de boton ajustado al contenido
+// .f_button.small: Estilo de boton pequeño
+// .f_button.f_button--default : Estilo de boton agrega evento hover al ".f_button"
+// .f_button.f_button--primary : Estilo de boton primario (enfasis color de fondo)
+// .f_button.f_button--secondary : Estilo de boton secundario (enfasis en color de letra y efecto hover)
+// .f_button.f_button--other : Estilo para boton sin enfasis (efecto hover)
+// .f_button.f_button--danger : Estilo de boton para accion eliminar
+// .f_button.f_button--refused : Estilo de boton para accion de formulario bloqueado
+// .f_button.f_button--outline : Estilo de boton solo con linea de contorno
+// .f_button.f_button--square : Estilo de boton cuadrado (util para tablas, cargar archivos, etc)
+// .f_button--light : Estilo de boton sin estilos (Util para una lista de acciones)
+
+button.f_button,
+a.f_button,
+label.f_button {
+    font-family: $fontbutton;
+    display: inline-block;
+    font-weight: bold;
+    //text-transform: uppercase;
+    text-align: center;
+    font-size: $fontsizemain;
+    line-height: $lineheight;
+    min-width: 90px;
+    padding: 5px 15px;
+    background-color: $colortema;
+    color: #FFF;
+    border: 1px solid transparent;
+    //border-radius: 3px;
+    outline: none;
+    vertical-align: middle;
+    cursor: pointer;
+
+	&.tight{
+		min-width: auto;
+		padding: 4px 9px !important;
+	}
+	
+	&.small{
+        font-size: .75rem;
+		min-width: auto;
+        border-radius: 0px !important;
+        padding: 2px 4px !important;
+    }
+
+    //&:hover {
+    //    -webkit-box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    //    box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    //}
+}
+
+button.f_button.f_button--default:hover,
+a.f_button.f_button--default:hover,
+label.f_button.f_button--default:hover {
+	background-color: darken($colortema, 10%);
+}
+
+button.f_button.f_button--primary,
+a.f_button.f_button--primary,
+label.f_button.f_button--primary {
+	color: $colortextbuttonprimary;
+    background: $colorbackbuttonprimary;
+
+	&:hover{
+		background-color: darken($colorbackbuttonprimary, 10%);
+	}
+}
+
+button.f_button.f_button--secondary,
+a.f_button.f_button--secondary,
+label.f_button.f_button--secondary {
+	color: $colortextbuttonsecondary;
+    background: $colorbackbuttonsecondary;
+
+	&:hover{
+		border: 1px solid $colorline;
+	}
+}
+
+button.f_button.f_button--other,
+a.f_button.f_button--other,
+label.f_button.f_button--other {
+	color: $colortextmain;
+    background: $colorbackbuttonsecondary;
+
+	&:hover{
+		border: 1px solid $colorline;
+	}
+}
+
+
+button.f_button.f_button--danger,
+a.f_button.f_button--danger,
+label.f_button.f_button--danger {
+    background-color: $colorbackbuttondanger;
+    color: $colortextbuttondanger;
+
+	&:hover{
+		background-color: darken($colorbackbuttondanger, 10%);
+	}
+}
+
+button.f_button.f_button--refused,
+a.f_button.f_button--refused,
+label.f_button.f_button--refused {
+    background-color: #fff !important;
+    color: #999 !important;
+	border: 1px solid #ccc !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	cursor: not-allowed !important;
+}
+
+
+button.f_button.f_button--outline,
+a.f_button.f_button--outline,
+label.f_button.f_button--outline {
+	background: #f6f6f6;
+	color: #454545;
+	border: 1px solid $colorline;
+	
+	&:hover {
+		background-color: darken(#f6f6f6, 10%);
+	}
+}
+
+button.f_button.f_button--square,
+a.f_button.f_button--square,
+label.f_button.f_button--square {
+    background-color: #f5f5f5;
+	background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	background-repeat: repeat-x;
+	color: #444;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	border: 1px solid #aaa;
+	border-radius: 1px;
+	
+	&:hover{
+		-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    	box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+	}
+}
+
+
+button.f_button--light,
+a.f_button--light,
+label.f_button--light {
+	border: unset;
+	background-color: unset;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
+
+

@@ -1,0 +1,19 @@
+// Insignia ---------------------------------------------------------------------------------------------------------------------
+// .f_badge: Estilo de insignia
+// .f_badge.f_badge--small: Estilo de insignia pequeño
+
+.f_badge{
+	display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    border-radius: 5px;
+    padding: 0 5px;
+    background-color: #2874a6;
+	color: #fff;
+	
+	&.f_badge--small{
+		padding-right: 3px;
+		padding-left: 3px;
+		font-size: .7rem;
+	}
+}

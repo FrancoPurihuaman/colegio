@@ -1,0 +1,30 @@
+/* ================= Estilo base =============== */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+	font-family: arial,tahoma,verdana,helvetica;
+    font-size: $fontsizemain;
+	line-height: $lineheight;
+    background-color: $colorbackmain;
+    color: $colortextmain;
+}
+
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}

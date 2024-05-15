@@ -1,0 +1,317 @@
+/* ================= Dropdown - Estilo para pantallas de moviles =============== */
+
+// .f_dropdown: Estilo de contenedor de dropdown
+// .f_dropdown.f_dropdown--left: Estilo de dropdown flotante a la derecha
+// .f_dropdown.show_menu: Mostrar dropdow oculto
+// .f_dropdown__btnToggle: (Estilo no especificado. Usar el componente de botones)
+// .f_dropdown__list: Estilo de lista de dropdown
+// .f_dropdown__item: Estilo de item de lista de dropdown
+// .f_dropdown__item .f_dropdown__list.show_submenu: Mostrar submenu de item de lista de dropdown
+// .f_dropdown__item .expand_submenu: Estilo de flecha expandir item de lista de dropdown
+
+
+.f_dropdown{
+	display: inline-block;
+	position: relative;
+}
+
+// Estilo del menu
+.f_dropdown__menu {
+    padding: .5rem 0;
+    position: absolute;
+    left: 0;
+	z-index: 5;
+	width: max-content;
+    border: 1px solid #c9ccd2;
+    display: none;
+
+	&.show_menu{
+		display: block;
+	}
+
+    &.f_dropdown__menu--left{
+		left: initial;
+        right: 0;
+    }
+}
+
+
+// Estilo de lista de menu
+.f_dropdown__list{
+    display: block;
+	width: 100%;
+}
+
+.f_dropdown__menu ul.f_dropdown__list {
+    font-size: .8rem;
+    font-weight: normal;
+}
+
+
+// Estilo de item de lista de menu
+
+.f_dropdown__item{
+    display: block;
+    line-height: 1.8rem;
+	padding: 0 2rem 0 0;
+	color: $colortextmain;
+    cursor: pointer;
+
+	& a{
+        display: inline-block;
+        color: inherit;
+    }
+
+	&.active{
+		font-weight: bold;
+	}
+}
+
+//.f_dropdown__item:hover{
+//	color: $colortema !important;
+//}
+
+.f_dropdown__item.parent_submenu{
+
+    &:hover{
+        background-color: $colorbackhsubmenu !important;
+    }
+}
+
+
+// Estilo de la flecha expandir submenu
+.f_dropdown__item{
+    position: relative;
+
+    .expand_submenu{
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-right: 2px solid; 
+        border-bottom: 2px solid;
+        -moz-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        color: $colortextmain;
+    }
+
+    &.active > .expand_submenu{
+        -moz-transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+		transform: rotate(-135deg);
+    }
+}
+
+
+// Estilos de submenu
+
+.f_dropdown__menu .f_dropdown__list .f_dropdown__list{
+    display: none;
+
+	&.show_submenu{
+		display: block;
+	}
+
+    .f_dropdown__item{
+        display: block;
+        color: $colortexthsubmenu;
+
+        &:hover{
+            background-color: inherit;
+			//color: $colortema !important;
+        }
+    }
+}
+
+
+// Estilos de indentación de menu
+@mixin menuItemIdentation($width) {
+    content: "";
+    display: inline-block;
+    width: $width + px;
+    position: relative;
+	top: 0;
+	right: 0;
+    z-index: -1;
+}
+
+.f_dropdown__list .f_dropdown__item{
+        
+    &::before{@include menuItemIdentation(20);}
+    & > a{ width: calc(100% - 20px);}
+}
+
+.f_dropdown__list .f_dropdown__list .f_dropdown__item{
+
+    &::before{@include menuItemIdentation(40);}
+    & > a{width: calc(100% - 40px);}
+}
+
+.f_dropdown__list .f_dropdown__list .f_dropdown__list .f_dropdown__item{
+
+    &::before{@include menuItemIdentation(60);}
+    & > a{width: calc(100% - 60px);}
+}
+
+.f_dropdown__list .f_dropdown__list .f_dropdown__list .f_dropdown__list .f_dropdown__item{
+    
+    &::before{@include menuItemIdentation(80);}
+    & > a{width: calc(100% - 80px);}
+}
+
+
+// Estilos de color de fondo de menu
+
+.f_dropdown__menu{
+    background-color: $colorbackmain;
+}
+
+.f_dropdown__list{
+    background-color: inherit;
+}
+
+.f_dropdown__list .f_dropdown__list{
+    background-color: inherit;
+}
+
+.f_dropdown__list .f_dropdown__list .f_dropdown__list{
+    background-color: inherit;
+}
+
+.f_dropdown__list .f_dropdown__list .f_dropdown__list .f_dropdown__list{
+    background-color: inherit;
+}
+
+
+
+/* ================= Dropdown - Estilo para pantallas medianas =============== */
+
+@media (min-width: map-get($breakpoints, md)) {
+	
+	// Estilo de lista de menu
+	.f_dropdown__list{
+	    display: block;
+		width: max-content;
+	}
+	
+	// Estilo de item de lista de menu
+	.f_dropdown__item{
+		padding-right: 2.2rem;
+		
+		&:hover{
+	        background-color: #ebebeb !important;
+	    }
+	}
+	
+	.f_dropdown__item.parent_submenu{
+	
+	    &:hover{
+	        background-color: #ebebeb !important;
+	    }
+	}
+	
+	// Estilo de la flecha expandir submenu
+	.f_dropdown__item{
+	    position: relative;
+	
+	    .expand_submenu{
+	        display: inline-block;
+	        width: 5px;
+	        height: 5px;
+	        border-right: 2px solid; 
+	        border-bottom: 2px solid;
+			-moz-transform:rotate(-45deg);
+			-webkit-transform:rotate(-45deg);
+			transform:rotate(-45deg);
+	        position: absolute;
+	        top: 12px;
+	        right: 15px;
+	        color: $colortextmain;
+	    }
+	
+	    &.active > .expand_submenu{
+			-moz-transform:rotate(135deg);
+			-webkit-transform:rotate(135deg);
+			transform:rotate(135deg);
+	    }
+	}
+	
+	
+	// Estilos de submenu
+	
+	.f_dropdown__menu {
+		
+		.f_dropdown__list .f_dropdown__list{
+			padding: .5rem 0;
+		    position: absolute;
+			top: 0;
+		    left: 100%;
+		    border: 1px solid #c9ccd2;
+		    display: none;
+		
+		    &.show_submenu{
+		        display: block;
+		        z-index: 5;
+		    }
+		}
+		
+		&--left .f_dropdown__list .f_dropdown__list{
+			left: initial;
+			right: 100%;
+		}
+		    
+	}
+	
+	
+	// Estilos de indentación de menu
+	
+	.f_dropdown__list .f_dropdown__item{
+    
+	    &::before{@include menuItemIdentation(20);}
+	    & > a{width: calc(100% - 20px);}
+	}
+	
+	.f_dropdown__list .f_dropdown__list .f_dropdown__item{
+	
+	    &::before{@include menuItemIdentation(20);}
+	    & > a{ width: calc(100% - 20px);}
+	}
+	
+	.f_dropdown__list .f_dropdown__list .f_dropdown__list .f_dropdown__item{
+	    
+	    &::before{ @include menuItemIdentation(20);}
+	    & > a{width: calc(100% - 20px);}
+	}
+	
+	.f_dropdown__list .f_dropdown__list .f_dropdown__list .f_dropdown__list .f_dropdown__item{
+	    
+	    &::before{@include menuItemIdentation(20);}
+	    & > a{width: calc(100% - 20px);}
+	}
+	
+	
+	// Estilos de color de fondo de menu
+
+	.f_dropdown__menu{
+	    background-color: $colorbackmain;
+	}
+	
+	.f_dropdown__list{
+	    background-color: $colorbackmain;
+	}
+	
+	.f_dropdown__list .f_dropdown__list{
+	    background-color: $colorbackmain;
+	}
+	
+	.f_dropdown__list .f_dropdown__list .f_dropdown__list{
+	    background-color: $colorbackmain;
+	}
+	
+	.f_dropdown__list .f_dropdown__list .f_dropdown__list .f_dropdown__list{
+	    background-color: $colorbackmain;
+	}
+ }

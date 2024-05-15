@@ -1,0 +1,98 @@
+// Alertas --------------------------------------------------------------------------------------------------
+// .f_alert-container: Estilo del contenedor de alertas (Solo para alertas flotantes)
+// .f_alert: Estilo de alerta
+// .f_alert.f_alert--full: Estilo de alerta con ancho al 100%
+// .f_alert.success: Estilo de alerta exito
+// .f_alert.info: Estilo de alerta informacion
+// .f_alert.warning: Estilo de alerta advertencia
+// .f_alert.danger: Estilo de alerta peligro
+// .f_alert.error: Estilo de alerta error
+
+.f_alert-container{
+    width: 95%;
+    max-width: 25rem;
+    position: absolute;
+    right: 5px;
+}
+
+.f_alert{
+    width: 100%;
+    font-size: .9rem;
+    padding: 1rem 3rem 1rem 1rem;
+	color: #31708f;
+    background-color: #d9edf7;
+	margin-top: 10px;
+    position: relative;
+    z-index: 1015;
+
+    &.f_alert--full{
+        width: 100%;
+        z-index: auto;
+    }
+
+    .f_alert__close{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        border: unset;
+        background-color: unset;
+        padding: 0;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        color: inherit;
+        
+        &:hover{
+            cursor: pointer;
+            color: #000;
+        }
+    }
+
+    ul {
+        text-align: left;
+        
+        li{
+            list-style: disc inside none;
+        }
+
+        li:first-child{
+            margin-top: .5rem;
+        }
+    }
+}
+
+.f_alert.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+  
+.f_alert.info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+  
+.f_alert.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+  
+.f_alert.danger, .f_alert.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+
+// Estilo de alerta para escritorio
+
+@media (min-width: map-get($breakpoints, md)) {
+    .f_alert-container{
+        width: auto;
+    }
+
+    .f_alert{
+        width: 25rem;
+    }
+}

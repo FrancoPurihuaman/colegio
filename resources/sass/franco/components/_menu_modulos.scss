@@ -1,0 +1,103 @@
+/* ================= Menu de modulos - Estilo para pantallas de moviles =============== */
+
+// Estilo del menu
+
+.f_menu_modules {
+    width: 100%;
+    height: calc(100vh - #{$heightheadermain});
+    background-color: $colortema;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+    top: #{$heightheadermain};
+    left: -150%;
+    display: none;
+
+    &--static{
+        position: static;
+        left: 0;
+        display: block;
+    }
+
+    &.show_menu {
+        display: block;
+        left: 0;
+        z-index: 1010;
+    }
+}
+
+// Estilo del boton toggle
+
+.f_menu_modules__btnToggle {
+    display: inline-block;
+}
+
+
+// Estilo del tablero contenedor del menu
+
+.f_menu_modules__table {
+    max-width: 1300px;
+    margin: auto;
+    padding-top: 4rem;
+    text-align: center;
+}
+
+
+// Estilo de item de lista
+
+.f_menu_modules__item {
+    display: inline-block;
+    width: 8rem;
+    height: 8rem;
+    text-align: center;
+
+    a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    & .f_menu_modules__logoItem {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    & .f_menu_modules__description{
+		display: block;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: #d9d7d7;
+    }
+}
+
+
+/* ================= Menu de modulos - Estilo para pantallas de escritorio =============== */
+
+@media (min-width: map-get($breakpoints, md)) { 
+    
+    // Estilo del tablero contenedor del menu
+
+    .f_menu_modules__table{
+        padding-top: 8rem;
+    }
+
+
+    // Estilo de item de lista
+
+    .f_menu_modules__item {
+        width: 9rem;
+        height: 9rem;
+
+        &:hover{
+            position: relative;
+            background-color: darken($colortema, 5%);
+            outline: 1px solid darken($colortema, 6%);;
+        }
+
+        & .f_menu_modules__logoItem{
+            font-size: 3rem;
+        }
+    }
+    
+}

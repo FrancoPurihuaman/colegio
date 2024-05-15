@@ -1,0 +1,175 @@
+// Card   ---------------------------------------------------------------------------------------------------------------
+// .f_card-section : Estilo de tarjeta de seccion de contenido
+// .f_card-section__header : Estilo de cabezera de tarjeta
+// .f_card-section__header .f_card-section__title : Estilo de titulo de cabezera de tarjeta
+
+
+.f_control-panel {
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	border-bottom: 1px solid $colorline;
+	
+	// Panel superior
+	.f_cp__top{
+		display: flex;
+		min-height: 30px;
+		margin: 5px 0px;
+		
+		// Panel superior izquierdo
+		.f_cp__top_left {
+			width: 85%;
+			
+			.f_cp_title{
+				font-size: 1.2rem;
+			}
+			
+			.f_cp_title--secondary{
+				font-size: 1rem;
+				color: rgba(0,0,0,0.4);
+			}
+		}
+		
+		
+		//Panel superior derecho
+		.f_cp__top_right{
+			width: 15%;
+			display: flex;
+			justify-content: flex-end;
+			
+			.f_cp_tr__search{
+				flex-grow: 1;
+				display: none;
+				
+				input{
+					width: 100%;
+				}
+			}
+		}
+	}
+	
+	// Panel inferior
+	.f_cp__bottom{
+		display: block;
+		min-height: 30px;
+		margin: 5px 0px;
+		
+		// Panel inferior izquierdo
+		.f_cp__bottom_left {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		// Panel inferior derecho
+		.f_cp__bottom_right {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			
+			// Paginador
+			.f_cp__pager_value{
+				width: 50px;
+				text-align: right;
+				border: none;
+				
+				&:focus{
+					border-bottom: 1px solid #000;
+				}
+			}
+		}
+		
+	}
+	
+	// Panel filtros
+	.f_filters{
+		
+		&__hidden-panel{
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 100;
+			width: 0px;
+			height: 0px;
+			padding: 0px;
+			overflow: hidden;
+			background-color: $colorbackmain;
+			border: 1px solid #c9ccd2;
+			-webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+			box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+			display: none;
+			
+			&.show{
+				width: 100%;
+				height: auto;
+				padding: $gutter;
+				overflow: visible;
+				display: block;
+			}
+		}
+		
+		.f_filters__options-panel{
+			input:focus{
+				border-bottom: 1px solid $colortema;
+			}
+		}
+		
+		.f_filters__title{
+			display: block;
+			font-size: 1rem;
+			font-weight: bold;
+			color: $colortexttitle2;
+			margin-bottom: 1rem;
+		}
+		
+		.f_filters__actions{
+			margin-top: 1rem;
+		}
+		
+		.f_filters__close{
+			float: right;
+		}
+		
+	}
+}
+
+
+
+// Estilo de panel de control para escritorio
+
+@media (min-width: map-get($breakpoints, sm)) {
+    .f_control-panel {
+		
+		.f_cp__top{
+			
+			.f_cp__top_left {
+				width: 50%;
+			}
+			
+			.f_cp__top_right{
+				width: 50%;
+				
+				.f_cp_tr__search{
+					display: block;
+					
+					input{
+						width: 100%;
+					}
+				}
+			}
+		}
+		
+		
+		.f_cp__bottom{
+			display: flex;
+			
+			.f_cp__bottom_left {
+				width: 50%;
+			}
+			
+			.f_cp__bottom_right {
+				width: 50%;
+			}
+			
+		}
+	}
+}

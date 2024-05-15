@@ -1,0 +1,94 @@
+// ===================== Estilo de contendor =============================================
+
+// Contenedor principal ---------------------------------------------------------------------------------------------------
+// .f_web-page: Estilo de pagina
+// .f_web-page .f_web-page__header: Estilo de cabezera de pagina
+// .f_web-page .f_web-page__body: Estilo de cuerpo de pagina
+// .f_web-page .f_web-page__body.f_body-page: Tratar al ".f_web-page__body" como una pagina y poder agregarle un header y un cuerpo
+// .f_web-page .f_web-page__body.f_body-page .f_body-page__header: Estilo de cabezera de pagina (siendo la pagina .f_web-page__body)
+// .f_web-page .f_web-page__body.f_body-page .f_body-page__body: Estilo de cuerpo de pagina (siendo la pagina .f_web-page__body)
+
+.f_web-page{
+    display: flex;
+    flex-flow: column nowrap;
+    direction: ltr;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+	.f_web-page__header{
+	    background-color: $colortema;
+	    padding: 0 $gutter;
+	    width: 100%;
+	}
+	
+	.f_web-page__body{
+	    flex: 1 1 100%;
+	    width: 100%;
+	    max-width: $maxwidthbodymain;
+	    padding: 0 $gutter;
+	    margin: auto;
+	    box-sizing: border-box;
+	    position: relative;
+	    overflow: auto;
+	}
+}
+
+
+
+.f_web-page__body.f_body-page {
+    display: flex;
+    flex-flow: column nowrap;
+    direction: ltr;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - $heightheadermain);
+    overflow: hidden;
+	padding: 0px;
+
+	.f_body-page__header{
+	    padding: 0 $gutter;
+	    width: 100%;
+	}
+	
+	.f_body-page__body{
+		flex: 1 1 100%;
+	    width: 100%;
+	    max-width: $maxwidthbodymain;
+	    padding: 0 $gutter;
+	    margin: auto;
+	    box-sizing: border-box;
+	    position: relative;
+	    overflow: auto;
+	}
+}
+
+
+// Estilo de contenedor para cuando sobrepasa el ancho maximo especificado
+
+@media (min-width: $maxwidthpage) {
+	.f_web-page{
+	
+		.f_web-page__header{
+		    padding: 0px;
+		}
+		
+		.f_web-page__body{
+		    padding: 0px;
+		}
+	}
+
+
+
+	.f_web-page__body.f_body-page {
+	
+		.f_body-page__header{
+		    padding: 0px;
+		}
+		
+		.f_body-page__body{
+		    padding: 0px;
+		}
+	}
+}

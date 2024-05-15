@@ -1,0 +1,15 @@
+// Link : ---------------------------------------------------------------------------------------------------------------------------------
+// .f_link : Estilo para link
+
+a.f_link {
+	text-decoration : none;
+
+	&:link, &:visited, &:hover, &:active {
+		color: $colortextlink;
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+}

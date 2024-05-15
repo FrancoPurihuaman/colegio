@@ -1,0 +1,112 @@
+// Modal -----------------------------------------------------------------------------------------------------------
+// .f_modal : Estilo para ventana modal
+// .f_modal__content : Estilo del contenido del modal
+// .f_modal__content.small : Estilo de modal pequeño
+// .f_modal__content.medium : Estilo de modal mediano
+// .f_modal__content.large : Estilo de modal largo
+// .f_modal__header: Estilo de la cabezera del modal
+// .f_modal__header f_modal__title: Estilo del titulo del modal
+// .f_modal__header f_modal__close: Estilo del boton de cierre de modal
+// .f_modal__body:  Estilo del cuerpo del modal
+// .f_modal__footer: Estilo del pie de modal
+
+	
+.f_modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1005;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+
+    .f_modal__content{
+        width: 100%;
+        padding: .2rem;
+        margin: auto;
+        margin-top: 2rem;
+        border-radius: 3px;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+        -moz-box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+        box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    }
+	
+	.f_modal__header {
+		background: #e9e9e9;
+		padding: .4rem 3rem .4rem 1rem;
+		border: 1px solid #ddd;
+		border-radius: 3px;
+        position: relative;
+		
+		.f_modal__title {
+			font-family: arial,tahoma,verdana,helvetica;
+			font-size: 1rem;
+			font-weight: 700;
+			color: #333;
+		}
+
+        .f_modal__close{
+            position: absolute;
+            top: .4rem;
+            right: .5rem;
+            border: unset;
+            background-color: unset;
+            padding: 0 .5rem;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            color: inherit;
+            
+            &:hover{
+                cursor: pointer;
+                color: #000;
+            }
+        }
+	}
+	
+	.f_modal__body {
+		padding: 1.2em 1em .5em;
+		min-height: 95px;
+	}
+	
+	.f_modal__footer {
+        text-align: right;
+        border-top: 1px solid rgb(215,215,215);;
+		margin-top: .5em;
+		padding: .3em 1em .5em .4em;
+	}
+}
+
+// Estilo de alerta para escritorio
+
+@media (min-width: map-get($breakpoints, md)) {
+    .f_modal {
+
+        .f_modal__content{
+            margin-top: 5rem;
+            margin-bottom: 3rem;
+
+            &.small{
+                max-width: 500px;
+            }
+
+            &.medium{
+                max-width: 800px;
+            }
+
+            &.large{
+                max-width: 1140px;
+            }
+
+            &.full{
+                margin-top: 0px;
+                margin-bottom: 0px;
+                width: 100%;
+            }
+        }
+    }
+}

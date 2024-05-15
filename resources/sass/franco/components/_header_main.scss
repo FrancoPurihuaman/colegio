@@ -1,0 +1,433 @@
+/* ================= Cabezera de pagina =============== */
+// .f_header: Estilo de cabezera de pagina
+// .f_header__module: Seccion de cabezera que sera contenedor de menu de modulo seleccionado
+// .f_header__infoAux: Seccion de cabezera que sera contenedor de notificaciones, mensajes, informacion de usuario, etc
+// .f_header__infoAux .f_user--forheader: Estilo de contenedor de tarjeta de informacion de usuario
+// .f_header__infoAux .f_header__notification: Estilo de contenedor de tarjeta de notificacion
+// .f_header__infoAux .f_header__message: Estilo de contenedor de mensaje
+
+
+// Estilo de cabezera
+
+.f_header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: $maxwidthheadermain;
+    height: $heightheadermain;
+    line-height: $heightheadermain;
+    font-size: .8rem;
+    color: $colortextheader;
+    background-color: $colorbackheader;
+    font-family: $fontheader;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+
+// Estilo de contenedor de información adicional
+
+.f_header__infoAux{
+    display: flex;
+    font-size: .95rem;
+
+    & > div{
+        display: inline-block;
+        vertical-align: middle;
+
+        &:hover{
+            background-color: darken($colortema, 2%);
+        }
+
+        i {
+            display: inline-block;
+            vertical-align: middle;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 .5rem;
+            text-align: center;
+            position: relative;
+            
+            .amount{
+                display: inline-block;
+                vertical-align: middle;
+                width: auto;
+                height: 15px;
+                line-height: 15px;
+                font-size: .6rem;
+                border-radius: 5px;
+                padding: 0 3px;
+                background-color: #2874a6 ;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+
+// Estilo de información de usuario
+
+.f_user--forheader{
+    position: relative;
+	padding-left: .5rem;
+}
+
+.f_user--forheader .f_user__image {
+    cursor: pointer;
+
+    span, img{
+        display: inline-block;
+        vertical-align: middle;
+        width: 30px;
+        height: 30px;
+		max-width: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: #a4414b;
+    }
+}
+
+.f_user--forheader .f_user__card{
+    width: 80vw;
+    line-height: 1rem;
+    background-color: #fff;
+    color: $colortextmain;
+    border-radius: 4px;
+    position: absolute;
+    top: -1500px;
+    // -webkit-box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    // -moz-box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    // box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    border: 1px solid #c9ccd2;
+    display: none;
+
+    &.show_card{
+        display: block;
+        top: $heightheadermain;
+        right: 0;
+        z-index: 1001;
+    }
+
+    & .f_user__info{
+        display: flex;
+        padding: 1rem;
+
+        & .f_user__image{
+            text-align: center;
+    
+            span, img{
+                width: 40px;
+                height: 40px;
+				max-width: 40px;
+                line-height: 40px;
+                border-radius: 50%;
+                color: #fff;
+            }
+        }
+
+        & .f_user__description{
+            padding-left: .5rem;
+    
+            .f_user__name{
+                margin-top: 1rem;
+                font-weight: bold;
+            }
+        
+            .f_user__type{
+                display: block;
+                font-size: .9rem;
+                margin-top: .3rem;
+            }
+        }
+    }
+
+    & .f_user__actions{
+        padding: .3rem 0;
+        border-top: 1px solid #e8eaed;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li a, li form{
+                display: block;
+                font-size: .9rem;
+                padding: .3rem 1rem;
+                color: inherit;
+
+                &:hover{
+                    background-color: #ebebeb;
+                }
+
+				button{
+					width: 100%;
+					text-align: left;
+				}
+            }
+        }
+
+    }
+
+    & .f_user__card_footer{
+        font-size: .7rem;
+        text-align: center;
+        padding: .4rem 0;
+        border-top: 1px solid #e8eaed;
+    }
+}
+
+
+
+// Estilo de notificacion y mensaje
+
+.f_header__notification_toggle,
+.f_header__message_toggle{
+    cursor: pointer;
+}
+
+.f_header__notification .f_notification__card,
+.f_header__message .f_message__card{
+    width: 100%;
+    line-height: 1rem;
+    background-color: #fff;
+    color: $colortextmain;
+    border-radius: 2px;
+    position: absolute;
+    top: -1500px;
+    // -webkit-box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    // -moz-box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    // box-shadow: 0px 0px 6px 1px rgba(50, 50, 50, 0.4), 0px 0px 0px rgba(60,60,60,0.1);
+    border: 1px solid #c9ccd2;
+    display: none;
+
+    &.show_card{
+        display: block;
+        top: $heightheadermain;
+        right: 0;
+        z-index: 1001;
+    }
+
+    
+}
+
+// Estilo de notificación
+
+.f_header__notification .f_notification__card{
+
+    .f_notification__links{
+        max-height: 20rem;
+        overflow-y: auto;
+    }
+
+    & .f_notification__link{
+        display: flex;
+        color: inherit;
+        text-decoration: none;
+        padding: .3rem;
+        border-bottom: 1px solid #e8eaed;
+
+        & .f_notification__image{
+            text-align: center;
+    
+            span, img{
+                display: inline-block;
+                vertical-align: middle;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                background-color: #a4414b;
+                color: #fff;
+            }
+        }
+
+        & .f_notification__description{
+            padding-left: .5rem;
+            flex-grow: 1;
+            overflow: auto;
+
+            .f_notification__info{
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            .f_notification__sender{
+                font-size: .7rem;
+                font-weight: bold;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .f_notification__time{
+                min-width: 80px;
+                text-align: right;
+                font-size: .6rem;
+                font-weight: 400;
+
+            }
+        
+            .f_notification__messaje{
+                display: block;
+                font-size: .75rem;
+                margin-top: .3rem;
+                color: #80848F;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    & .f_notification__card_footer{
+        font-size: .85rem;
+        text-align: center;
+        padding: .4rem 0;
+        border-top: 1px solid #e8eaed;
+
+        & a{
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+// Estilo de mensaje
+
+.f_header__message .f_message__card{
+
+    .f_message__links{
+        max-height: 20rem;
+        overflow-y: auto;
+    }
+
+    & .f_message__link{
+        display: flex;
+        color: inherit;
+        text-decoration: none;
+        padding: .3rem;
+        border-bottom: 1px solid #e8eaed;
+
+        & .f_message__image{
+            text-align: center;
+    
+            span, img{
+                display: inline-block;
+                vertical-align: middle;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                background-color: #a4414b;
+                color: #fff;
+            }
+        }
+
+        & .f_message__description{
+            padding-left: .5rem;
+            flex-grow: 1;
+            overflow: auto;
+
+            .f_message__info{
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            .f_message__sender{
+                font-size: .7rem;
+                font-weight: bold;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .f_message__time{
+                min-width: 80px;
+                text-align: right;
+                font-size: .6rem;
+                font-weight: 400;
+
+            }
+        
+            .f_message__messaje{
+                display: block;
+                font-size: .75rem;
+                margin-top: .3rem;
+                color: #80848F;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    & .f_message__card_footer{
+        font-size: .85rem;
+        text-align: center;
+        padding: .4rem 0;
+        border-top: 1px solid #e8eaed;
+
+        & a{
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+
+/* ================= Cabezera de pagina - Estilo para pantallas de escritorio =============== */
+
+
+@media (min-width: map-get($breakpoints, sm)) { 
+
+    // Estilo de modulo de menu
+
+    .f_header__module {
+        display: inline-block;
+    }
+
+    // Estilo de contenedor de información adicional
+
+    .f_header__infoAux > div i{
+        padding: 0 .6rem;
+    }
+
+
+    // Estilo de información de usuario
+
+    .f_user--forheader{
+
+        & .f_user__card{
+            width: 20rem;
+        }
+    }
+
+
+    // Estilo de notificacion
+
+    .f_header__notification {
+        position: relative;
+
+        .f_notification__card{
+            width: 20rem;
+        }
+    }
+
+    // Estilo de message
+
+    .f_header__message {
+        position: relative;
+
+        .f_message__card{
+            width: 20rem;
+        }
+    }
+
+}
+
+

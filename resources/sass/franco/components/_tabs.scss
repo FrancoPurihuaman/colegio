@@ -1,0 +1,75 @@
+// Tabs : --------------------------------------------------------------------------------------------------------------------
+// .f_tabs : Estilo de tabs
+// .f_tabs--boxed: Estilo de tabs en caja para el item activo
+// .f_tabs--light: Estilo de tabs con borde inferior para el item activo
+// .f_tabs .f_tabs__item--active : Estilo de tab activo
+// .f_tabs .f_tabs__item--unactive : Estilo de tab inactivo
+
+.f_tabs {
+	display: flex;
+	flex-wrap: wrap;
+    font-family: $fontsubheader;
+	margin-top: 10px;
+    position: relative;
+	clear: both;
+
+
+    &::after{
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        background-color: $colorline;
+    }
+	
+	& .f_tabs__item {
+		
+		a {
+			display: inline-block;
+			white-space: nowrap;
+            text-decoration: none;
+            color: $colortextmain;
+			padding: 12px 14px 13px;
+			margin: 0em 0.2em;
+			background-image: none !important;
+		}
+	}
+	
+
+    &.f_tabs--boxed{
+
+        .f_tabs__item--active {
+            border-left: 1px solid #CCC;
+            border-top: 3px solid $colortema;
+            border-right: 1px solid #CCC;
+        }
+
+        .f_tabs__item--unactive {
+            border-left: 1px solid transparent;
+            border-top: 1px solid transparent;
+            border-right: 1px solid transparent;
+        }
+    }
+
+    &.f_tabs--light{
+        
+        .f_tabs__item--active {
+            border-bottom: 1px solid #485fc7;
+
+            a{
+                color: #485fc7;
+            }
+        }
+
+        .f_tabs__item--unactive {
+
+            a{
+                color: $colortextmain;
+            }
+        }
+    }
+	
+}

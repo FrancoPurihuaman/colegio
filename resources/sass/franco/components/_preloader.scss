@@ -1,0 +1,161 @@
+// Efecto de carga (loading) --------------------------------------------------------------------------------------------
+// .f_preloader--onda : Estilo animación "cargando" (Estilo ondas de frecuencia)
+// .f_preloaderonda.f_po-center : Estilo para centrar la animación
+
+.f_preloader--onda {
+    position:relative;
+	display: inline-block;
+	height: 1px;
+
+	& span{
+	    display: inline-block;
+	    bottom: 0px;
+	    width: 9px;
+	    height: 5px;
+	    background: #9b59b6;
+	    position: absolute;
+	    animation: kf_preloader-onda 1.5s  infinite ease-in-out;
+	}
+	
+	& span:nth-child(2) {
+		left:11px;
+		animation-delay: .2s;
+	 
+	}
+	& span:nth-child(3) {
+		left:22px;
+		animation-delay: .4s;
+	}
+	& span:nth-child(4) {
+		left:33px;
+		animation-delay: .6s;
+	}
+	& span:nth-child(5) {
+		left:44px;
+		animation-delay: .8s;
+	}
+}
+
+.f_preloader--onda.f_po-center {
+	text-align: center !important;
+	
+	& span:nth-child(1) {
+		left:-33px;
+		animation-delay: .0s;
+	}
+	& span:nth-child(2){
+		left:-22px;
+		animation-delay: .2s;
+	}
+	& span:nth-child(3) {
+		left:-11px;
+		animation-delay: .4s;
+	}
+	& span:nth-child(4) {
+		left:0px;
+		animation-delay: .6s;
+	}
+	& span:nth-child(5) {
+		left:11px;
+		animation-delay: .8s;
+	}
+}
+ 
+
+@keyframes kf_preloader-onda {
+    0% {height:5px;transform:translateY(0px);background:#9b59b6;}
+    25% {height:30px;transform:translateY(15px);background:#3498db;}
+    50% {height:5px;transform:translateY(0px);background:#9b59b6;}
+    100% {height:5px;transform:translateY(0px);background:#9b59b6;}
+}
+
+
+
+// Efecto de rotacion (loading) --------------------------------------------------------------------------------------------
+// .f_rotate-circle--infinite : Estilo animación de rotación infinita (Util para efecto de carga)
+
+.f_rotate-circle--infinite {
+	animation: kf_rotate-circle 1s  infinite linear;
+}
+
+@keyframes kf_rotate-circle {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+
+// Efecto de movimiento de serpiente (loading) --------------------------------------------------------------------------------------------
+// .f_preloader--snaker : Estilo animación de movimiento de serpiente
+// .f_preloader--snaker.big : Tamaño grande de los circulos que componen el cuerpo de serpiente
+
+.f_preloader--snaker{
+	position: relative;
+  	display: inline-block;
+  	
+  	& > span{
+		display: inline-block;
+	    background: #ddd;
+	    border-radius: 50%;
+	    
+	    &:nth-child(1){
+		    animation: f_anim_move-y .9s ease-in-out infinite;
+		}
+		
+		&:nth-child(2){
+			animation: f_anim_move-y .9s ease-in-out 0.22s infinite;
+		}
+		
+		&:nth-child(3){
+		    animation: f_anim_move-y .9s ease-in-out 0.44s infinite;
+		
+		}
+	}
+	
+	&.big > span{
+		width: 15px;
+		height: 15px;
+		
+		&:nth-child(1), &:nth-child(2){
+			margin-right: 5px;
+		}
+	}
+	
+}
+
+@keyframes f_anim_move-y{
+  0%, 75%, 100%{
+    transform: translateY(0px)
+  }
+  25%{
+    transform: translateY(-10px)
+  }
+}
+
+
+
+// Efecto de desvaneser (loading) --------------------------------------------------------------------------------------------
+// .f_preloader--fade : Estilo animación de desvanecimiento para letras. Para lograr este efecto es necesario aplicarlo a varios elementos
+//						en linea y agregarle un "animation-delay" a cada elemento (ejem: 0.25s, 0.5s, 0.75s, 1s, ...). El efecto se ve como
+// 						una luz que pasa por cada letra. Ideal para la palabra "LOADING" o "CARGANDO".
+
+.f_preloader--fade{
+	position: relative;
+	display: inline-block;
+    animation: f_anim_fade 2s linear infinite ;
+}
+    
+@keyframes f_anim_fade{
+	0%{
+		opacity: 0.1;
+	}
+
+	80%{
+		opacity: 0.5;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}

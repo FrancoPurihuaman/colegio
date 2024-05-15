@@ -1,0 +1,117 @@
+// ======================= Medidas ======================
+
+// Breakpoints
+//$breakpoints : (
+//    xs  : 0,
+//    sm  : 576px,
+//    md  : 768px,
+//    lg  : 992px,
+//    xl  : 1200px
+//);
+
+$breakpoints : (
+    sm  : 640px,
+    md  : 768px,
+    lg  : 1024px,
+    xl  : 1280px,
+	2xl : 1536px
+);
+
+// Tamaño de fuente
+$fontsizemain: 13px;
+
+// Tamaño de linea
+$lineheight: 19px;
+
+// Altura de la cabezera de pagina
+$heightheadermain: 3rem;
+
+// Maximo ancho de pagina
+$maxwidthpage: 1800px;
+
+// Maximo ancho de la cabezera de pagina
+$maxwidthheadermain: $maxwidthpage;
+
+// Maximo ancho del contenedor de contenido principal
+$maxwidthbodymain: $maxwidthpage;
+
+// Espaciado a los lados de un contenedor
+$gutter: 15px;
+
+// ======================= Fuentes de texto ===================
+
+
+$fontmain: arial,tahoma,verdana,helvetica;                              // Fuente de pagina
+$fontheader: "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;     // Fuente del header de pagina
+$fontsubheader: $fontheader;                                            // Fuente para los subcabezeras
+$fontbutton: $fontmain;                                                 // Fuente para los botones
+
+
+
+// ======================= Colores =====================
+
+// Generales
+$colortema : #155db1;                                   // Color de tema del dashboard
+$colorbackmain: #f4f6f9;                                // Color de fondo de la pagina
+$colortextmain: rgba(40, 40, 60, 0.9);                  // Color de texto de la pagina
+$colortextsecondary: #626774;                           // Color de texto secundario
+$colorline: rgb(215,215,215);                           // Color de linea
+$colortexttitle: rgba(40, 40, 60, 0.9);                 // Color de texto para titulo
+$colortexttitle2: rgb(35,135,140);                      // Color de texto para titulo (opcion 2)
+$colortexttitle3: rgb(100,0,100);                       // Color de texto para titulo (opcion 3)
+
+// Colores del header
+$colorbackheader: $colortema;                             // Color de fondo de cabezera de pagina
+$colortextheader: #fff;                                 // Color de texto de cabezera de pagina
+
+// Menu del header de pagina
+$colorbackhmenu: $colortema;                                // Color de fondo del menu de cabezera de pagina
+$colortexthmenu: #fff;                                    // Color de texto del menu de cabezera de pagina
+$colorbackhsubmenu: #fff;                                 // Color de fondo de submenu de cabezera de pagina
+$colortexthsubmenu: $colortextmain;                         // Color de texto de submenu de cabezera de pagina
+$colorbackhsubmenumobilelevel1: darken($colorbackhmenu, 5%); // Color de fondo de submenu nivel 1 de cabezera (solo para moviles) 
+$colorbackhsubmenumobilelevel2: darken($colorbackhmenu, 8%); // Color de fondo de submenu nivel 2 de cabezera (solo para moviles)
+$colorbackhsubmenumobilelevel3: darken($colorbackhmenu, 11%);// Color de fondo de submenu nivel 3 de cabezera (solo para moviles)
+
+
+// Menu modulos
+$colorbackmenumodulos: $colortema;                        // Color de fondo del menu de modulos
+$colortextmenumodulos: #fff;                            // Color de texto del menu de modulos
+
+// Link
+$colortextlink: rgb(10, 20, 100);                       // Color de texto de link
+
+// Input
+$colorbackinput: $colorbackmain;                          // Color de fondo del input
+$colorborderinput: rgba(0,0,0,.2);                      // Color de borde del input
+
+// Label
+$colortextfieldrequired: #400030;                       // Color de texto de campo requerido
+
+// Button
+$colortextbuttonprimary: #FFF;                          // Color de texto de boton primario
+$colorbackbuttonprimary: rgb(35,135,140);     		  // Color de fondo de boton primario
+$colortextbuttonsecondary: rgb(35,135,140);             // Color de texto de boton secundario
+$colorbackbuttonsecondary: $colorbackmain;				  // Color de fondo de boton secundario
+$colorbackbuttondanger: rgb(234,228,225);               // Color de fondo de boton eliminar
+$colortextbuttondanger: #633;                           // Color de texto de boton eliminar 
+
+// Tabla
+$colorbackthead: rgb(233,234,237);                      // Color de fondo de cabezera de tabla
+$colorbacktreven: #f2f2f2;                              // Color de fondo de linea par de tabla 
+$colorbacktrodd: rgb(255,255,255);                      // Color de fondo de linea impar de tabla 
+$colortexttroddeven: #202020;                           // Color de texto de linea de tabla (par o impar)
+$colorbacktrhover: rgb(237,244,251);                    // Color de fondo de linea de tabla con estado hover
+$colorbacktrcheked: rgb(230,237,244);                   // Color de fondo de linea de tabla con estado checked
+
+// Paginacion
+$colorbackitempagination: rgba(0,23,55,0.08);           // Color de fondo de item de paginacion
+$colortextitempagination:#888ea8;                       // Color de texto de item de paginacion
+$colorbackitempaginationactive: #4361ee;                // Color de fondo de item de paginacion con estado activo
+$colortextitempaginationactive: #fff;                   // Color de texto de item de paginacion con estado activo
+$colorbackitempaginationhover: #4361ee;                 // Color de fondo de item de paginacion con estado hover
+$colortextitempaginationhover: #fff;                    // Color de texto de item de paginacion con estado hover
+
+// Tooltip
+$colorbacktooltip: rgba(255, 255, 255, 0.96);           // Color de fonto de tooltip
+$colortexttooltip: #333;                                // Color de texto de tooltip

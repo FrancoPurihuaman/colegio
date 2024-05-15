@@ -1,0 +1,52 @@
+// Paginación: ------------------------------------------------------------------------------------------------------
+// .f_pagination: Estilo de paginación
+// .f_pagination__list: Estilo de lista de paginación
+// .f_pagination__item: Estilo item de lista de paginación
+// .f_pagination__link: Estilo de link de paginación 
+
+.f_pagination{
+    display: flex;
+    justify-content: center;
+    
+    .f_pagination__list{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .f_pagination__item{
+        margin-top: .5rem;
+
+        .f_pagination__link{
+            display: inline-block;
+            margin-right: 5px;
+            border-radius: 5px;
+            //padding: 8px 12px;
+            padding: 5px 7px;
+            font-size: .875rem;
+            line-height: .875rem;
+            background: rgba(0,23,55,0.08);
+            color: #888ea8;
+            border: none;
+            outline: none;
+            box-shadow: none;
+    
+            &:hover{
+                color: #4361ee;
+            }
+        }
+
+        &.active .f_pagination__link{
+            background-color: #4361ee;
+	        color: #fff;
+        }
+    }
+}
+
+// Estilo de paginación para escritorio
+
+@media (min-width: map-get($breakpoints, md)) {
+    .f_pagination {
+        justify-content: end;
+    }
+}
