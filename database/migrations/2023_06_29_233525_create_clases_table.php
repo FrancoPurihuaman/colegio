@@ -15,13 +15,12 @@ class CreateClasesTable extends Migration
     {
         Schema::create('CLASE', function (Blueprint $table) {
             $table->id('CLS_CODIGO');
-            $table->char('CLS_GRADO', 1);
-            $table->char('CLS_SECCION', 1);
-            $table->integer('CLS_YEAR');
             $table->timestamp('CLS_CREATED')->nullable();
             $table->timestamp('CLS_UPDATED')->nullable();
+            $table->unsignedBigInteger('GRP_CODIGO');
             $table->unsignedBigInteger('ARE_CODIGO');
             $table->unsignedBigInteger('PFS_CODIGO');
+            $table->foreign('GRP_CODIGO')->references('GRP_CODIGO')->on('GRUPO');
             $table->foreign('ARE_CODIGO')->references('ARE_CODIGO')->on('AREA');
             $table->foreign('PFS_CODIGO')->references('PFS_CODIGO')->on('PROFESOR');
         });

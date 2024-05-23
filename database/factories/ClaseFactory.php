@@ -14,9 +14,7 @@ class ClaseFactory extends Factory
     public function definition()
     {
         return [
-            'CLS_GRADO' => $this->faker->randomElement(['1', '2', '3', '4', '5']),
-            'CLS_SECCION' => $this->faker->randomElement(['A', 'B']),
-            'CLS_YEAR' => 2023,
+            'GRP_CODIGO' => $this->faker->numberBetween(1, 2),
             'ARE_CODIGO' => $this->faker->numberBetween(1, 10),
             'PFS_CODIGO' => $this->faker->numberBetween(1, 8)
         ];

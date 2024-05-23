@@ -15,12 +15,13 @@ class CreateMatriculasTable extends Migration
     {
         Schema::create('MATRICULA', function (Blueprint $table) {
             $table->id('MTL_CODIGO');
+            $table->string('MTL_TUTOR', 100);
             $table->timestamp('MTL_CREATED')->nullable();
             $table->timestamp('MTL_UPDATED')->nullable();
-            $table->unsignedBigInteger('CLS_CODIGO');
             $table->unsignedBigInteger('STD_CODIGO');
-            $table->foreign('CLS_CODIGO')->references('CLS_CODIGO')->on('CLASE');
+            $table->unsignedBigInteger('GRP_CODIGO');
             $table->foreign('STD_CODIGO')->references('STD_CODIGO')->on('ESTUDIANTE');
+            $table->foreign('GRP_CODIGO')->references('GRP_CODIGO')->on('GRUPO');
         });
     }
 

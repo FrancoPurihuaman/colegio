@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\Area::factory(10)->create();
         \App\Models\Competencia::factory(20)->create();
         \App\Models\Capacidad::factory(30)->create();
+        \App\Models\Grado::factory(5)->create();
+        \App\Models\Grupo::factory(2)->create();
         \App\Models\Clase::factory(8)->create();
         \App\Models\Matricula::factory(30)->create();
         \App\Models\Calificacion::factory(30)->create();

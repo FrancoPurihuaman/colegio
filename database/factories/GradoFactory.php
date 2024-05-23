@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class MatriculaFactory extends Factory
+class GradoFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,9 +14,8 @@ class MatriculaFactory extends Factory
     public function definition()
     {
         return [
-            'MTL_TUTOR' => 'Tutor test',
-            'GRP_CODIGO' => $this->faker->numberBetween(1, 2),
-            'STD_CODIGO' => $this->faker->numberBetween(1, 50)
+            'GRD_NOMBRE' => $this->faker->text(15),
+            'GRD_DESCRIPCION' => $this->faker->text(255)
         ];
     }
 }
