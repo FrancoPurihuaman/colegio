@@ -14,16 +14,16 @@ class CalificacionFactory extends Factory
     public function definition()
     {
         return [
-            'CLF_NOTA' => $this->faker->randomElement(['A', 'B', 'C']),
+            'CLF_NOTA' => $this->faker->randomElement(['AD', 'A', 'B', 'C']),
             'CLF_DESCRIPCION' => $this->faker->text(50),
             'CLS_PERIODO_ACADEMICO' => $this->faker->randomElement([
                 'TRIMESTE I',
                 'TRIMESTRE II',
                 'TRIMESTRE III'
             ]),
-            'CLS_OBSERVACION' => $this->faker->text(50),
-            'MTL_CODIGO' => $this->faker->numberBetween(1, 30),
-            'CPT_CODIGO' => $this->faker->numberBetween(1, 4)
+            'STD_CODIGO' => $this->faker->numberBetween(1, 49),
+            'CLS_CODIGO' => $this->faker->numberBetween(1, 2),
+            'CPT_CODIGO' => $this->faker->numberBetween(1, 2)
         ];
     }
 }

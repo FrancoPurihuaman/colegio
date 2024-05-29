@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Traits\PaginatorLimitsFromTo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\setting\AreaRequest;
-use App\Models\Area;
+use App\Http\Requests\setting\GradoRequest;
+use App\Models\Grado;
 
-class AreaController extends Controller
+class GradoController extends Controller
 {
     use PaginatorLimitsFromTo;
     
@@ -25,25 +24,25 @@ class AreaController extends Controller
         $codigo         = $request->query('filter_ref', '');
         $nombre         = $request->query('filter_nombre', '');
         
-        // Condiciones para mostrar area
-        $oArea = new Area();
+        // Condiciones para mostrar grado
+        $oGrado = new Grado();
         if ($codigo != '' && is_numeric($codigo) && $codigo >= 1) {
-            $oArea = $oArea->where('ARE_CODIGO', '=', $codigo);
+            $oGrado = $oGrado->where('GRD_CODIGO', '=', $codigo);
         }
         if($nombre != '') {
-            $oArea = $oArea->where('ARE_NOMBRE', 'LIKE', $nombre.'%');
+            $oGrado = $oGrado->where('GRD_NOMBRE', 'LIKE', $nombre.'%');
         }
         
         // Obtener paginador y agregamos la cadena de consulta
-        $pgdAreas = $oArea->orderBy('ARE_CODIGO', 'desc')->paginate(25)->withQueryString();
+        $pgdGrados = $oGrado->orderBy('GRD_CODIGO', 'desc')->paginate(25)->withQueryString();
         
         // Enviar valores de consulta
         $request->flash();
         
-        return view('setting.area.areaLista', [
+        return view('setting.grado.gradoLista', [
             'modulo' => $this->modulo,
-            'pgdAreas' => $pgdAreas,
-            'pgdAreasLimits' => $this->getPaginatorLimitsFromTo($pgdAreas)
+            'pgdGrados' => $pgdGrados,
+            'pgdGradosLimits' => $this->getPaginatorLimitsFromTo($pgdGrados)
         ]);
     }
     
@@ -54,7 +53,7 @@ class AreaController extends Controller
      */
     public function create()
     {
-        return view('setting.area.areaCrear', [
+        return view('setting.grado.gradoCrear', [
             'modulo' => $this->modulo
         ]);
         
@@ -66,17 +65,17 @@ class AreaController extends Controller
      * @param  \Illuminate\Http\Requests
      * @return \Illuminate\Http\Response
      */
-    public function store(AreaRequest $request)
+    public function store(GradoRequest $request)
     {
-        $oArea = new Area();
+        $oGrado = new Grado();
         
-        $oArea->ARE_NOMBRE = strtolower($request->nombre);
-        $oArea->ARE_DESCRIPCION = $request->descripcion;
+        $oGrado->GRD_NOMBRE = strtolower($request->nombre);
+        $oGrado->GRD_DESCRIPCION = $request->descripcion;
         
-        $oArea->save();
+        $oGrado->save();
         
-        return redirect()->route('area.mostrar', [
-            'id' => $oArea->ARE_CODIGO
+        return redirect()->route('grado.mostrar', [
+            'id' => $oGrado->GRD_CODIGO
         ])->with('status', [
             'type'      => 'success',
             'message'   => 'Creado exitosamente!!'
@@ -91,11 +90,11 @@ class AreaController extends Controller
      */
     public function show($id)
     {
-        $oArea = Area::findOrFail($id);
+        $oGrado = Grado::findOrFail($id);
         
-        return view('setting.area.areaMostrar', [
+        return view('setting.grado.gradoMostrar', [
             'modulo'  => $this->modulo,
-            'area'    => $oArea
+            'grado'    => $oGrado
         ]);
     }
     
@@ -107,11 +106,11 @@ class AreaController extends Controller
      */
     public function edit($id)
     {
-        $oArea = Area::findOrFail($id);
+        $oGrado = Grado::findOrFail($id);
         
-        return view('setting.area.areaEditar', [
+        return view('setting.grado.gradoEditar', [
             'modulo' => $this->modulo,
-            'area' => $oArea
+            'grado' => $oGrado
         ]);
     }
     
@@ -122,17 +121,17 @@ class AreaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AreaRequest $request, $id)
+    public function update(GradoRequest $request, $id)
     {
-        $oArea = Area::findOrFail($id);
+        $oGrado = Grado::findOrFail($id);
         
-        $oArea->ARE_NOMBRE = strtolower($request->nombre);
-        $oArea->ARE_DESCRIPCION = $request->descripcion;
+        $oGrado->GRD_NOMBRE = strtolower($request->nombre);
+        $oGrado->GRD_DESCRIPCION = $request->descripcion;
         
-        $oArea->save();
+        $oGrado->save();
         
-        return redirect()->route('area.mostrar', [
-            'id' => $oArea->ARE_CODIGO
+        return redirect()->route('grado.mostrar', [
+            'id' => $oGrado->GRD_CODIGO
         ])->with('status', [
             'type'      => 'success',
             'message'   => 'Actualizado exitosamente!!'
@@ -147,14 +146,14 @@ class AreaController extends Controller
      */
     public function destroy($id)
     {
-        $oArea = Area::findOrFail($id);
+        $oGrado = Grado::findOrFail($id);
         
-        // Se eliminará el area si no tiene alguna clase o competencia asociada
-        if(is_null($oArea->clases->first()) && is_null($oArea->competencias->first())){
+        // Se eliminará el grado si no tiene algun grupo asociado
+        if(is_null($oGrado->grupos->first())){
             
-            $oArea->delete();
+            $oGrado->delete();
             
-            return redirect()->route('area.lista')->with('status', [
+            return redirect()->route('grado.lista')->with('status', [
                 'type'      => 'success',
                 'message'   => 'Eliminado exitosamente!!'
             ]);
@@ -162,7 +161,7 @@ class AreaController extends Controller
             
             return back()->with('status', [
                 'type'      => 'error',
-                'message'   => 'Área no puede ser eliminado'
+                'message'   => 'Grado no puede ser eliminado'
             ]);
         }
     }

@@ -24,7 +24,7 @@
                     <span class="f_menu_modules__logoItem" style="color: #c5bb78;">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </span>
-                    <div class="f_menu_modules__description">Clases</div>
+                    <div class="f_menu_modules__description">Grupos</div>
                 </a>
             </li>
             <li class="f_menu_modules__item">

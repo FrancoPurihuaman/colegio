@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ColegioController;
 use App\Http\Controllers\CompetenciaController;
+use App\Http\Controllers\GradoController;
 use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\LibretaController;
 use App\Http\Controllers\EstudianteController;
@@ -128,6 +129,31 @@ Route::put('/setting/competencia/{id}/actualizar', [CompetenciaController::class
 
 // Competencia -> eliminar
 Route::delete('/setting/competencia/{id}/eliminar', [CompetenciaController::class, 'destroy'])->middleware('auth')->name('competencia.eliminar');
+
+
+// Grado *********************
+
+// Grado -> lista
+Route::get('/setting/grado/lista', [GradoController::class, 'index'])->middleware('auth')->name('grado.lista');
+
+// Grado -> formulario crear
+Route::get('/setting/grado/crear', [GradoController::class, 'create'])->middleware('auth')->name('grado.crear');
+
+// Grado -> guardar
+Route::post('/setting/grado/guardar', [GradoController::class, 'store'])->middleware('auth')->name('grado.guardar');
+
+// Grado -> mostrar
+Route::get('/setting/grado/{id}/mostrar', [GradoController::class, 'show'])->middleware('auth')->name('grado.mostrar');
+
+// Grado -> formulario editar
+Route::get('/setting/grado/{id}/editar', [GradoController::class, 'edit'])->middleware('auth')->name('grado.editar');
+
+// Grado -> Actualizar
+Route::put('/setting/grado/{id}/actualizar', [GradoController::class, 'update'])->middleware('auth')->name('grado.actualizar');
+
+// Grado -> eliminar
+Route::delete('/setting/grado/{id}/eliminar', [GradoController::class, 'destroy'])->middleware('auth')->name('grado.eliminar');
+
 
 
 // Modulo reportes ------------------------------------------------------------------

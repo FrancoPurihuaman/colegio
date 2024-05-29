@@ -15,15 +15,17 @@ class CreateCalificacionsTable extends Migration
     {
         Schema::create('CALIFICACION', function (Blueprint $table) {
             $table->id('CLF_CODIGO');
-            $table->char('CLF_NOTA', 1);
-            $table->string('CLF_DESCRIPCION', 500);
+            $table->string('CLF_NOTA', 2);
+            $table->string('CLF_DESCRIPCION', 500)->nullable();
             $table->string('CLS_PERIODO_ACADEMICO', 30);
             $table->timestamp('CLF_CREATED')->nullable();
             $table->timestamp('CLF_UPDATED')->nullable();
-            $table->unsignedBigInteger('EST_CODIGO');
+            $table->unsignedBigInteger('STD_CODIGO');
             $table->unsignedBigInteger('CLS_CODIGO');
-            $table->foreign('EST_CODIGO')->references('EST_CODIGO')->on('ESTUDIANTE');
+            $table->unsignedBigInteger('CPT_CODIGO')->nullable();
+            $table->foreign('STD_CODIGO')->references('STD_CODIGO')->on('ESTUDIANTE');
             $table->foreign('CLS_CODIGO')->references('CLS_CODIGO')->on('CLASE');
+            $table->foreign('CPT_CODIGO')->references('CPT_CODIGO')->on('COMPETENCIA');
         });
     }
 

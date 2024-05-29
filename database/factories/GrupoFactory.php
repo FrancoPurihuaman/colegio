@@ -14,8 +14,10 @@ class GrupoFactory extends Factory
     public function definition()
     {
         return [
-            'GRP_PERIODO_ACADEMICO' => 2024,
-            'GRP_SECCION' => $this->faker->text(15),
+            'GRP_YEAR_ACADEMICO' => 2024,
+            'GRP_SECCION' => $this->faker->text(5),
+            'GRP_PERIODO_EVALUACION' => 'TRIMESTRE',
+            'GRP_CANT_PERIODOS_EVAL' => 3,
             'GRD_CODIGO' => $this->faker->numberBetween(1,5)
         ];
     }

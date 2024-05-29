@@ -15,8 +15,8 @@ class CreateGradoTable extends Migration
     {
         Schema::create('GRADO', function (Blueprint $table) {
             $table->id('GRD_CODIGO');
-            $table->string('GRD_NOMBRE', 15);
-            $table->string('GRD_DESCRIPCION', 255);
+            $table->string('GRD_NOMBRE', 20);
+            $table->string('GRD_DESCRIPCION', 255)->nullable();
             $table->timestamp('GRD_CREATED')->nullable();
             $table->timestamp('GRD_UPDATED')->nullable();
         });

@@ -24,9 +24,10 @@
                 <li class="f_menu__item"><a href="{{ route('estudiante.lista') }}">Estudiantes</a></li>
             </ul>
         </li>
-        <li class="f_menu__item"><a href="{{ route('area.lista') }}">Áreas</a></li>
-    	<li class="f_menu__item">CNEB
+        <li class="f_menu__item">Programa curricular
             <ul class="f_menu__list">
+                <li class="f_menu__item"><a href="{{ route('area.lista') }}">Áreas</a></li>
+                <li class="f_menu__item"><a href="{{ route('grado.lista') }}">Grados</a></li>
                 <li class="f_menu__item"><a href="{{ route('competencia.lista') }}">Competencias</a></li>
             </ul>
         </li>
