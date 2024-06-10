@@ -34,14 +34,14 @@
 @section('content-main')
 
 {{-- Tarjeta de seccion --}}
-<div class="f_card-section f_card-section--border mt-4">
-    <div class="f_card-section__header">
-    	<div class="f_card-section__title">
-    		<span class="f_card-section__title-icon"><i class="fas fa-tag mr-3"></i></span>
+<div class="f_card f_card--border mt-4">
+    <div class="f_card__header">
+    	<div class="f_card__title">
+    		<span class="f_card__title-icon"><i class="fas fa-tag mr-3"></i></span>
     		Nueva área
     	</div>
     </div>
-    <div class="f_card-section__body">
+    <div class="f_card__body">
     
     	<div class="w-full">
             <form action="{{ route('area.guardar') }}" 

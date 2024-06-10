@@ -1,19 +1,19 @@
-// Tarjeta de sección   ---------------------------------------------------------------------------------------------------------------
-// .f_card-section : Estilo de tarjeta de seccion de contenido
-// .f_card-section.f_card-section--border : Estilo de tarjeta de seccion de contenido con bordes
-// .f_card-section__header : Estilo de cabezera de tarjeta
-// .f_card-section__header .f_card-section__title : Estilo de titulo de cabezera de tarjeta
-// .f_card-section__title .f_card-section__title-icon : Estilo de icono de titulo de cabezera
-// .f_card-section__title .f_card-section__title-secondary : Estilo de titulo secundario de cabezera
-// .f_card-section__body : Estilo de cuerpo de tarjeta
-// .f_card-section__body--border : Estilo de cuerpo de tarjeta con bordes
-// .f_card-section__body--border-top : Estilo de cuerpo de tarjeta solo con borde superior
-// .f_card-section__footer : Estilo de pie de tarjeta
-// .f_card-section__footer .actions : Estilo de pie de tarjetar para botones de aciones (formularios, etc)
+// Tarjeta de sección de contenido general ----------------------------------------------------------------------------------------
+// .f_card : Estilo de tarjeta de seccion de contenido
+// .f_card.f_card--border : Estilo de tarjeta de seccion de contenido con bordes
+// .f_card__header : Estilo de cabezera de tarjeta
+// .f_card__header .f_card__title : Estilo de titulo de cabezera de tarjeta
+// .f_card__title .f_card__title-icon : Estilo de icono de titulo de cabezera
+// .f_card__title .f_card__title-secondary : Estilo de titulo secundario de cabezera
+// .f_card__body : Estilo de cuerpo de tarjeta
+// .f_card__body--border : Estilo de cuerpo de tarjeta con bordes
+// .f_card__body--border-top : Estilo de cuerpo de tarjeta solo con borde superior
+// .f_card__footer : Estilo de pie de tarjeta
+// .f_card__footer .actions : Estilo de pie de tarjetar para botones de aciones (formularios, etc)
  
-.f_card-section {
+.f_card {
 
-	.f_card-section__header {
+	.f_card__header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -25,21 +25,21 @@
 		padding-bottom: 4px;
 		margin: 0;
 
-		.f_card-section__title{
+		.f_card__title{
 			font-size: 1rem;
 			color: $colortexttitle2;
 
-			.f_card-section__title-icon{
+			.f_card__title-icon{
 				color: rgba(0,0,0,0.4);
 			}
 
-			.f_card-section__title-secondary{
+			.f_card__title-secondary{
 				color: rgba(0,0,0,0.4);
 			}
 		}
 	}
 
-	.f_card-section__body{
+	.f_card__body{
 		padding: 15px 0px 30px;
 
 		&--border{
@@ -56,7 +56,7 @@
 	}
 
 
-	.f_card-section__footer {
+	.f_card__footer {
 		margin: 20px 0px 30px;
 	
 		&.actions {
@@ -71,53 +71,19 @@
 }
 
 
-.f_card-section {
+.f_card {
 	
-	&.f_card-section--border{
+	&.f_card--border{
 		border: 1px solid $colorline;
 		
-		.f_card-section__header{
+		.f_card__header{
 			padding: 4px $gutter 4px $gutter;
 			border-bottom: 1px solid $colorline;
 		}
 		
-		.f_card-section__body{
+		.f_card__body{
 			padding-left: $gutter;
 			padding-right: $gutter;
-		}
-	}
-}
-
-
-// Tarjeta de presentación ---------------------------------------------------------------------------------------------------------
-// .f_card-presentation: Tarjeta de presentación
-// .f_card-presentation .f_card-presentation__image: Imagen de la tarjeta
-// .f_card-presentation .f_card-presentation__content: Contendio de la carjeta
-// .f_card-presentation__content .f_card-presentation__body: Cuerpo de la tarjeta
-// .f_card-presentation__content .f_card-presentation__footer: Pie de la tarjeta
-
-.f_card-presentation {
-	display: flex;
-	padding: .25rem;
-	border: 1px solid $colorline;
-	
-	.f_card-presentation__image{
-		width: 4rem;
-	}
-	
-	.f_card-presentation__content{
-		flex-grow: 1;
-		display: flex;
-		flex-direction: column;
-		padding-right: .5rem;
-		padding-left: .5rem;
-		
-		.f_card-presentation__body{
-			flex-grow: 1;
-		}
-		
-		.f_card-presentation__footer{
-			margin-top: .5rem;
 		}
 	}
 }

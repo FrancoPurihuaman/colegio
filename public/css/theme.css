@@ -1679,7 +1679,7 @@ a {
     width: 50%;
   }
 }
-.f_card-section .f_card-section__header {
+.f_card .f_card__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1691,72 +1691,50 @@ a {
   padding-bottom: 4px;
   margin: 0;
 }
-.f_card-section .f_card-section__header .f_card-section__title {
+.f_card .f_card__header .f_card__title {
   font-size: 1rem;
   color: rgb(35, 135, 140);
 }
-.f_card-section .f_card-section__header .f_card-section__title .f_card-section__title-icon {
+.f_card .f_card__header .f_card__title .f_card__title-icon {
   color: rgba(0, 0, 0, 0.4);
 }
-.f_card-section .f_card-section__header .f_card-section__title .f_card-section__title-secondary {
+.f_card .f_card__header .f_card__title .f_card__title-secondary {
   color: rgba(0, 0, 0, 0.4);
 }
-.f_card-section .f_card-section__body {
+.f_card .f_card__body {
   padding: 15px 0px 30px;
 }
-.f_card-section .f_card-section__body--border {
+.f_card .f_card__body--border {
   padding-top: 21px;
   padding-bottom: 18px;
   border-top: 1px solid rgb(215, 215, 215);
   border-bottom: 1px solid rgb(215, 215, 215);
 }
-.f_card-section .f_card-section__body--border-top {
+.f_card .f_card__body--border-top {
   padding-top: 18px;
   border-top: 1px solid rgb(215, 215, 215);
 }
-.f_card-section .f_card-section__footer {
+.f_card .f_card__footer {
   margin: 20px 0px 30px;
 }
-.f_card-section .f_card-section__footer.actions {
+.f_card .f_card__footer.actions {
   margin: 40px 0px 60px;
 }
-.f_card-section .f_card-section__footer.actions > a, .f_card-section .f_card-section__footer.actions > button {
+.f_card .f_card__footer.actions > a, .f_card .f_card__footer.actions > button {
   margin-bottom: 1.4rem;
   margin-right: 0px;
 }
 
-.f_card-section.f_card-section--border {
+.f_card.f_card--border {
   border: 1px solid rgb(215, 215, 215);
 }
-.f_card-section.f_card-section--border .f_card-section__header {
+.f_card.f_card--border .f_card__header {
   padding: 4px 15px 4px 15px;
   border-bottom: 1px solid rgb(215, 215, 215);
 }
-.f_card-section.f_card-section--border .f_card-section__body {
+.f_card.f_card--border .f_card__body {
   padding-left: 15px;
   padding-right: 15px;
-}
-
-.f_card-presentation {
-  display: flex;
-  padding: 0.25rem;
-  border: 1px solid rgb(215, 215, 215);
-}
-.f_card-presentation .f_card-presentation__image {
-  width: 4rem;
-}
-.f_card-presentation .f_card-presentation__content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
-}
-.f_card-presentation .f_card-presentation__content .f_card-presentation__body {
-  flex-grow: 1;
-}
-.f_card-presentation .f_card-presentation__content .f_card-presentation__footer {
-  margin-top: 0.5rem;
 }
 
 .f_tabs {
@@ -2362,7 +2340,7 @@ label.f_button--light {
   cursor: pointer;
 }
 
-/* ================= Menu del header - Estilo para pantallas de moviles =============== */
+/* ================= Dropdown - Estilo para pantallas de moviles =============== */
 .f_dropdown {
   display: inline-block;
   position: relative;
@@ -2520,7 +2498,7 @@ label.f_button--light {
   background-color: inherit;
 }
 
-/* ================= Menu del header - Estilo para pantallas medianas =============== */
+/* ================= Dropdown - Estilo para pantallas medianas =============== */
 @media (min-width: 768px) {
   .f_dropdown__list {
     display: block;
@@ -2720,6 +2698,65 @@ a.f_link:link, a.f_link:visited, a.f_link:hover, a.f_link:active {
 }
 a.f_link:hover {
   text-decoration: underline;
+}
+
+.f_image--avatar-table {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 0px;
+  border-radius: 50%;
+  background-size: contain;
+  background-color: #fff;
+  vertical-align: middle;
+}
+
+.f_image--ref {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  padding: 4px;
+  font-size: 1.6rem;
+  border: 1px solid rgb(215, 215, 215);
+}
+.f_image--ref img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.f_actividad-rapida {
+  display: flex;
+  padding: 0.5rem 0.25rem;
+  border: 1px solid rgb(215, 215, 215);
+}
+.f_actividad-rapida .f_actividad-rapida__image {
+  width: 4rem;
+  text-align: center;
+  font-size: 2.25rem;
+  margin-top: 0.6rem;
+}
+.f_actividad-rapida .f_actividad-rapida__content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.f_actividad-rapida .f_actividad-rapida__content .f_actividad-rapida__body {
+  flex-grow: 1;
+}
+.f_actividad-rapida .f_actividad-rapida__content .f_actividad-rapida__body .f_actividad-rapida__cantidad {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.f_actividad-rapida .f_actividad-rapida__content .f_actividad-rapida__body .f_actividad-rapida__descripcion {
+  font-size: 0.8rem;
+}
+.f_actividad-rapida .f_actividad-rapida__content .f_actividad-rapida__footer {
+  margin-top: 0.5rem;
 }
 
 .f_badge {

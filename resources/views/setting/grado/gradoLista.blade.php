@@ -120,9 +120,9 @@
 @section("content-main")
 
 {{-- Tarjeta de seccion --}}
-<div class="f_card-section">
+<div class="f_card">
     
-    <div class="f_card-section__body">
+    <div class="f_card__body">
     
         {{-- Table --}}
         <div class="f_overflow_scroll-x">

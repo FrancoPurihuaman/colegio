@@ -1,0 +1,34 @@
+// Imagen --------------------------------------------------------------------------------------------------------------------------
+// .f_image--avatar-table : Imagen avatar para mostrar en las tablas
+// .f_image--ref : Imagen de referencia
+
+.f_image--avatar-table {
+	display: inline-block;
+	width: 1.2rem;
+	height: 1.2rem;
+	border: 0px;
+	border-radius: 50%;
+	background-size: contain;
+	background-color: #fff;
+	vertical-align: middle;
+}
+
+
+.f_image--ref {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 80px;
+	height: 80px;
+    padding: 4px;
+	font-size: 1.6rem;
+	border: 1px solid $colorline;
+    //-webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+	//-moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    //box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+
+	img {
+		width: 100%;
+		object-fit: contain;
+	}
+}

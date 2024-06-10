@@ -43,7 +43,7 @@
     direction: ltr;
     position: relative;
     width: 100%;
-    height: calc(100vh - $heightheadermain);
+    height: calc(100vh - #{$heightheadermain});
     overflow: hidden;
 	padding: 0px;
 

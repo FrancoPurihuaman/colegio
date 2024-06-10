@@ -1,0 +1,44 @@
+// Widget de actividad rapida ---------------------------------------------------------------------------------------------------------
+// .f_actividad-rapida: Tarjeta de presentación de perfil
+// .f_actividad-rapida .f_actividad-rapida: Imagen de la tarjeta
+// .f_actividad-rapida .f_actividad-rapida: Contendio de la carjeta
+// .f_actividad-rapida .f_actividad-rapida: Cuerpo de la tarjeta
+// .f_actividad-rapida .f_actividad-rapida: Pie de la tarjeta
+
+.f_actividad-rapida {
+	display: flex;
+	padding: .5rem .25rem;
+	border: 1px solid $colorline;
+	
+	.f_actividad-rapida__image{
+		width: 4rem;
+		text-align: center;
+		font-size: 2.25rem;
+		margin-top: 0.6rem;
+	}
+	
+	.f_actividad-rapida__content{
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		padding-right: .5rem;
+		padding-left: .5rem;
+		
+		.f_actividad-rapida__body{
+			flex-grow: 1;
+
+			.f_actividad-rapida__cantidad {
+				font-size: 1.875rem;
+  				line-height: 2.25rem;
+			}
+
+			.f_actividad-rapida__descripcion {
+				font-size: .8rem;
+			}
+		}
+		
+		.f_actividad-rapida__footer{
+			margin-top: .5rem;
+		}
+	}
+}
