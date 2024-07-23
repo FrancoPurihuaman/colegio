@@ -55,7 +55,7 @@
 <div class="f_card f_card--border mt-4">
     <div class="f_card__header">
     	<div class="f_card__title">
-    		<span class="f_card__title-icon"><i class="fas fa-tag mr-3"></i></span>
+    		<span class="f_card__title-icon"><i class="fas fa-graduation-cap mr-3"></i></span>
     		Detalle de grado
     	</div>
     </div>
@@ -64,7 +64,7 @@
     	<div class="mb-4">
 			<div class="inline-block mr-2 md:mr-4">
       			<div class="f_image--ref">
-      				<span class="fas fa-book" style=" color: #a69944"></span>
+      				<span class="fas fa-graduation-cap" style=" color: #a69944"></span>
       			</div>
 			</div>
 			<div class="inline-block align-top">

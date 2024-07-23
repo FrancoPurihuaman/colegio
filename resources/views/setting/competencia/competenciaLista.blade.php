@@ -154,7 +154,7 @@
                         <td>
                             <a href="{{ route('competencia.mostrar', ['id' => $competencia]) }}" class="f_link" style="display: flex">
                                 <span style=" color: #a69944">
-                                    <i class="fas fa-book mr-1"></i>
+                                    <i class="fas fa-puzzle-piece mr-1"></i>
                                 </span>
                                 <span class="align-middtle">{{ $competencia->CPT_CODIGO }}</span>
                             </a>

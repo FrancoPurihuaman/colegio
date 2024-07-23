@@ -55,7 +55,7 @@
 <div class="f_card f_card--border mt-4">
     <div class="f_card__header">
     	<div class="f_card__title">
-    		<span class="f_card__title-icon"><i class="fas fa-tag mr-3"></i></span>
+    		<span class="f_card__title-icon"><i class="fas fa-user-tie mr-3"></i></span>
     		Detalle de profesor
     	</div>
     </div>
@@ -67,7 +67,7 @@
       				@if($profesor->getFoto)
       					<img alt="" src="{{ $profesor->getFoto }}">
       				@else
-      					<span class="fas fa-user" style=" color: #a69944"></span>
+      					<span class="fas fa-user-tie" style=" color: #a69944"></span>
       				@endif
       			</div>
 			</div>

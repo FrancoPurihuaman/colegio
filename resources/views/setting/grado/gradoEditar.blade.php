@@ -37,7 +37,7 @@
 <div class="f_card f_card--border mt-4">
     <div class="f_card__header">
     	<div class="f_card__title">
-    		<span class="f_card__title-icon"><i class="fas fa-school mr-3"></i></span>
+    		<span class="f_card__title-icon"><i class="fas fa-graduation-cap mr-3"></i></span>
     		Editar grado
     	</div>
     </div>
