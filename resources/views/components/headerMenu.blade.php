@@ -15,7 +15,7 @@
 <nav {{ $attributes->merge(['class' => 'f_menu']) }} id="menuHeader">
     <ul class="f_menu__list" id="menuHeaderList">
     	<li class="f_menu__item f_menu__item--module">
-    		<a href="#">{{ ucFirst($modulo) }}</a>
+    		<a href="{{ route('setting.home') }}">{{ ucFirst($modulo) }}</a>
 		</li>
     	<li class="f_menu__item"><a href="{{ route('colegio.mostrar') }}">Colegio</a></li>
     	<li class="f_menu__item">Personas

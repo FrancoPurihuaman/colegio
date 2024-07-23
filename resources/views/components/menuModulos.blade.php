@@ -12,7 +12,7 @@
     <div class="f_menu_modules__table">
         <ul id="menuModulesList">
             <li class="f_menu_modules__item">
-                <a href="{{ route('colegio.mostrar', ['id' => 1]) }}">
+                <a href="{{ route('setting.home') }}">
                     <span class="f_menu_modules__logoItem" style="color: #a55858;">
                         <i class="fas fa-cog"></i>
                     </span>

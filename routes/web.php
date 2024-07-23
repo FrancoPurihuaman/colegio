@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\LibretaController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\AreaController;
+use App\Http\Controllers\ModSettingController;
 
 // Menu principal de modulos --------------------------------------------------------------------
 Route::get('/', function () { return view('modulos'); })->middleware('auth')->name('modulos.index');
@@ -16,6 +17,9 @@ Route::get('/', function () { return view('modulos'); })->middleware('auth')->na
 
 
 // Modulo configuración ------------------------------------------------------------------
+
+Route::get('/setting', [ModSettingController::class, 'index'])->middleware('auth')->name('setting.home');
+
 
 // Colegio *********************
 
