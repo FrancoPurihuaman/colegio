@@ -9,7 +9,12 @@
     {{-- Favicon --}}
     <link rel="shortcut icon" type="image/png" href="{{ asset('img/icon.png') }}"/>
     {{-- Font Awesome --}}
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+	  <!-- SOLO PARA USO OFFLINE - QUITAR PARA SUBIR A PRODUCCION -->
+      <link href="/font_offline/css/fontawesome.css" rel="stylesheet" />
+      <link href="/font_offline/css/brands.css" rel="stylesheet" />
+      <link href="/font_offline/css/solid.css" rel="stylesheet" />
+      <!-- FIN SOLO PARA USO OFFLINE --->
 	{{-- Tailwind --}}
 	<script src="{{ asset('js/tailwind.js') }}"></script>
 	{{-- Selectr --}}

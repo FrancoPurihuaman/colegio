@@ -58,7 +58,7 @@ class User extends Authenticatable
      * @return String
      */
     public function getGetPhotoAttribute() {
-        return  $this->getImage("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2016%2F06%2F06%2F97658-glasses-brunette-smiling-face-closeup-women.jpg&f=1&nofb=1", $this->name);
+        return  $this->getImage(asset("img/user1.jpg"), $this->name);
     }
     
     
