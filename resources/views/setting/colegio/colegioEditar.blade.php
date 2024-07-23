@@ -60,7 +60,7 @@
     									<img alt="" src="{{ $colegio->getLogo }}" id="imgLogo">
     								</div>
     								<div class="pt-2">
-    									<input type="file" name="logo" id="fileLogo" class="hidden">
+    									<input type="file" name="logo" id="fileLogo" class="hidden" accept="image/*">
     									<label for="fileLogo" class="f_button f_button--square small">Cambiar</label>
     								</div>
     							</div>

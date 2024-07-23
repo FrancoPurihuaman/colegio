@@ -58,7 +58,7 @@
     									<img alt="" src="" id="imgFoto">
     								</div>
     								<div class="pt-2">
-    									<input type="file" name="foto" id="fileFoto" class="hidden">
+    									<input type="file" name="foto" id="fileFoto" class="hidden" accept="image/*">
     									<label for="fileFoto" class="f_button f_button--square small">Seleccionar</label>
     								</div>
     							</div>
