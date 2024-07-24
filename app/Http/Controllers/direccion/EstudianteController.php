@@ -6,7 +6,7 @@ use App\Traits\PaginatorLimitsFromTo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Estudiante;
-use App\Http\Requests\setting\EstudianteRequest;
+use App\Http\Requests\direccion\EstudianteRequest;
 
 class EstudianteController extends ModDireccionController
 {
@@ -42,7 +42,7 @@ class EstudianteController extends ModDireccionController
         // Enviar valores de consulta
         $request->flash();
         
-        return view('setting.estudiante.estudianteLista', [
+        return view('direccion.estudiante.estudianteLista', [
             'modulo' => $this->modulo,
             'pgdEstudiantes' => $pgdEstudiantes,
             'pgdEstudiantesLimits' => $this->getPaginatorLimitsFromTo($pgdEstudiantes)
@@ -56,7 +56,7 @@ class EstudianteController extends ModDireccionController
      */
     public function create()
     {
-        return view('setting.estudiante.estudianteCrear', [
+        return view('direccion.estudiante.estudianteCrear', [
             'modulo' => $this->modulo
         ]);
         
@@ -103,7 +103,7 @@ class EstudianteController extends ModDireccionController
     {
         $oEstudiante = Estudiante::findOrFail($id);
         
-        return view('setting.estudiante.estudianteMostrar', [
+        return view('direccion.estudiante.estudianteMostrar', [
             'modulo'        => $this->modulo,
             'estudiante'    => $oEstudiante
         ]);
@@ -119,7 +119,7 @@ class EstudianteController extends ModDireccionController
     {
         $oEstudiante = Estudiante::findOrFail($id);
         
-        return view('setting.estudiante.estudianteEditar', [
+        return view('direccion.estudiante.estudianteEditar', [
             'modulo' => $this->modulo,
             'estudiante' => $oEstudiante
         ]);

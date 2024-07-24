@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\setting;
+namespace App\Http\Requests\direccion;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AreaRequest extends FormRequest
+class GradoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class AreaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'            => 'required|max:50',
-            'descripcion'       => 'present|max:500'
+            'nombre'            => 'required|max:20',
+            'descripcion'       => 'present|max:255'
         ];
     }
 }

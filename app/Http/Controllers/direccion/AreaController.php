@@ -4,7 +4,7 @@ namespace App\Http\Controllers\direccion;
 
 use App\Traits\PaginatorLimitsFromTo;
 use Illuminate\Http\Request;
-use App\Http\Requests\setting\AreaRequest;
+use App\Http\Requests\direccion\AreaRequest;
 use App\Models\Area;
 
 class AreaController extends ModDireccionController
@@ -37,7 +37,7 @@ class AreaController extends ModDireccionController
         // Enviar valores de consulta
         $request->flash();
         
-        return view('setting.area.areaLista', [
+        return view('direccion.area.areaLista', [
             'modulo' => $this->modulo,
             'pgdAreas' => $pgdAreas,
             'pgdAreasLimits' => $this->getPaginatorLimitsFromTo($pgdAreas)
@@ -51,7 +51,7 @@ class AreaController extends ModDireccionController
      */
     public function create()
     {
-        return view('setting.area.areaCrear', [
+        return view('direccion.area.areaCrear', [
             'modulo' => $this->modulo
         ]);
         
@@ -90,7 +90,7 @@ class AreaController extends ModDireccionController
     {
         $oArea = Area::findOrFail($id);
         
-        return view('setting.area.areaMostrar', [
+        return view('direccion.area.areaMostrar', [
             'modulo'  => $this->modulo,
             'area'    => $oArea
         ]);
@@ -106,7 +106,7 @@ class AreaController extends ModDireccionController
     {
         $oArea = Area::findOrFail($id);
         
-        return view('setting.area.areaEditar', [
+        return view('direccion.area.areaEditar', [
             'modulo' => $this->modulo,
             'area' => $oArea
         ]);

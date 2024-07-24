@@ -5,7 +5,7 @@ namespace App\Http\Controllers\direccion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Profesor;
-use App\Http\Requests\setting\ProfesorRequest;
+use App\Http\Requests\direccion\ProfesorRequest;
 use App\Traits\PaginatorLimitsFromTo;
 
 
@@ -43,7 +43,7 @@ class ProfesorController extends ModDireccionController
         // Enviar valores de consulta
         $request->flash();
         
-        return view('setting.profesor.profesorLista', [
+        return view('direccion.profesor.profesorLista', [
             'modulo' => $this->modulo,
             'pgdProfesores' => $pgdProfesores,
             'pgdProfesoresLimits' => $this->getPaginatorLimitsFromTo($pgdProfesores)
@@ -57,7 +57,7 @@ class ProfesorController extends ModDireccionController
      */
     public function create()
     {
-        return view('setting.profesor.profesorCrear', [
+        return view('direccion.profesor.profesorCrear', [
             'modulo' => $this->modulo
         ]);
         
@@ -107,7 +107,7 @@ class ProfesorController extends ModDireccionController
     {
         $oProfesor = Profesor::findOrFail($id);
         
-        return view('setting.profesor.profesorMostrar', [
+        return view('direccion.profesor.profesorMostrar', [
             'modulo'        => $this->modulo,
             'profesor'      => $oProfesor
         ]);
@@ -123,7 +123,7 @@ class ProfesorController extends ModDireccionController
     {
         $oProfesor = Profesor::findOrFail($id);
         
-        return view('setting.profesor.profesorEditar', [
+        return view('direccion.profesor.profesorEditar', [
             'modulo' => $this->modulo,
             'profesor' => $oProfesor
         ]);

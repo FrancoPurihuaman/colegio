@@ -24,7 +24,7 @@ class DireccionHomeController extends ModDireccionController
         $cantAreas = Area::count();
         $cantGrados = Grado::count();
         
-        return view('setting.settingHome', [
+        return view('direccion.direccionHome', [
             'modulo' => $this->modulo,
             'cantEstudiantes' => $cantEstudiantes,
             'cantProfesores' => $cantProfesores,

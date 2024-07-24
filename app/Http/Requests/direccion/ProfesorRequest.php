@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests\setting;
+namespace App\Http\Requests\direccion;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class EstudianteRequest extends FormRequest
+class ProfesorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,33 +24,35 @@ class EstudianteRequest extends FormRequest
      */
     public function rules()
     {
-        $codigoEstRules = "";
+        $dniRules = "";
         
         if ($this->method() === "PUT") {
-            $codigoEstRules = 'bail|required|max:20|unique:ESTUDIANTE,STD_COD_ESTUDIANTE,'.$this->route('id').',STD_CODIGO';
+            $dniRules = 'bail|required|size:8|unique:PROFESOR,PFS_DNI,'.$this->route('id').',PFS_CODIGO';
         }else{
-            $codigoEstRules = 'bail|required|max:20|unique:ESTUDIANTE,STD_COD_ESTUDIANTE';
+            $dniRules = 'bail|required|size:8|unique:PROFESOR,PFS_DNI';
         }
         
         return [
-            'codigo_est'        => $codigoEstRules,
             'nombre'            => 'required|max:50',
             'apellido_pat'      => 'required|max:50',
             'apellido_mat'      => 'required|max:50',
+            'dni'               => $dniRules,
             'sexo'              => 'required|in:M,F',
-            'fecha_nacimiento'  => 'date',
+            'fecha_nacimiento'  => 'nullable|date',
+            'email'             => 'nullable|email',
+            'telefono'          => 'nullable|numeric',
+            'especialidad'      => 'required|max:50',
             'foto'              => 'nullable|image|mimes:jpg,jpeg,png'
         ];
     }
     
     /**
      * Get custom attributes for validator errors
-     *
+     * 
      * @return array
      */
     public function attributes() {
         return [
-            'codigo_est'        => 'código de estudiante',
             'apellido_pat'      => 'apellido paterno',
             'apellido_mat'      => 'apellido materno',
             'fecha_nacimiento'  => 'fecha de nacimiento'

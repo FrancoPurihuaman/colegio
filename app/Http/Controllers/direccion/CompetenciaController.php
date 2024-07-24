@@ -4,7 +4,7 @@ namespace App\Http\Controllers\direccion;
 
 use App\Traits\PaginatorLimitsFromTo;
 use Illuminate\Http\Request;
-use App\Http\Requests\setting\CompetenciaRequest;
+use App\Http\Requests\direccion\CompetenciaRequest;
 use App\Models\Competencia;
 use App\Models\Area;
 
@@ -44,7 +44,7 @@ class CompetenciaController extends ModDireccionController
         // Enviar valores de consulta
         $request->flash();
         
-        return view('setting.competencia.competenciaLista', [
+        return view('direccion.competencia.competenciaLista', [
             'modulo' => $this->modulo,
             'pgdCompetencias' => $pgdCompetencias,
             'pgdCompetenciasLimits' => $this->getPaginatorLimitsFromTo($pgdCompetencias),
@@ -61,7 +61,7 @@ class CompetenciaController extends ModDireccionController
     {
         $areas = Area::all();
         
-        return view('setting.competencia.competenciaCrear', [
+        return view('direccion.competencia.competenciaCrear', [
             'modulo' => $this->modulo,
             'areas' => $areas
         ]);
@@ -102,7 +102,7 @@ class CompetenciaController extends ModDireccionController
     {
         $oCompetencia = Competencia::findOrFail($id);
         
-        return view('setting.competencia.competenciaMostrar', [
+        return view('direccion.competencia.competenciaMostrar', [
             'modulo'  => $this->modulo,
             'competencia'    => $oCompetencia
         ]);
@@ -119,7 +119,7 @@ class CompetenciaController extends ModDireccionController
         $oCompetencia = Competencia::findOrFail($id);
         $areas = Area::all();
         
-        return view('setting.competencia.competenciaEditar', [
+        return view('direccion.competencia.competenciaEditar', [
             'modulo' => $this->modulo,
             'competencia'   => $oCompetencia,
             'areas' => $areas

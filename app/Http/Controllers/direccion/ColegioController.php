@@ -5,7 +5,7 @@ namespace App\Http\Controllers\direccion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Colegio;
-use App\Http\Requests\setting\ColegioRequest;
+use App\Http\Requests\direccion\ColegioRequest;
 
 class ColegioController extends ModDireccionController
 {
@@ -33,7 +33,7 @@ class ColegioController extends ModDireccionController
             return redirect()->route('colegio.mostrar');
             
         }else{
-            return view('setting.colegio.colegioCrear', [
+            return view('direccion.colegio.colegioCrear', [
                 'modulo' => $this->modulo
             ]);
         }
@@ -79,7 +79,7 @@ class ColegioController extends ModDireccionController
         $oColegio = Colegio::first();
         
         if ($oColegio) {
-            return view('setting.colegio.colegioMostrar', [
+            return view('direccion.colegio.colegioMostrar', [
                 'modulo'        => $this->modulo,
                 'colegio'      => $oColegio
             ]);
@@ -98,7 +98,7 @@ class ColegioController extends ModDireccionController
     {
         $oColegio = Colegio::firstOrFail();
         
-        return view('setting.colegio.colegioEditar', [
+        return view('direccion.colegio.colegioEditar', [
             'modulo' => $this->modulo,
             'colegio' => $oColegio
         ]);

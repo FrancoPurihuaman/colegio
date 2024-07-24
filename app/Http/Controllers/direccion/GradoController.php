@@ -4,7 +4,7 @@ namespace App\Http\Controllers\direccion;
 
 use App\Traits\PaginatorLimitsFromTo;
 use Illuminate\Http\Request;
-use App\Http\Requests\setting\GradoRequest;
+use App\Http\Requests\direccion\GradoRequest;
 use App\Models\Grado;
 
 class GradoController extends ModDireccionController
@@ -37,7 +37,7 @@ class GradoController extends ModDireccionController
         // Enviar valores de consulta
         $request->flash();
         
-        return view('setting.grado.gradoLista', [
+        return view('direccion.grado.gradoLista', [
             'modulo' => $this->modulo,
             'pgdGrados' => $pgdGrados,
             'pgdGradosLimits' => $this->getPaginatorLimitsFromTo($pgdGrados)
@@ -51,7 +51,7 @@ class GradoController extends ModDireccionController
      */
     public function create()
     {
-        return view('setting.grado.gradoCrear', [
+        return view('direccion.grado.gradoCrear', [
             'modulo' => $this->modulo
         ]);
         
@@ -90,7 +90,7 @@ class GradoController extends ModDireccionController
     {
         $oGrado = Grado::findOrFail($id);
         
-        return view('setting.grado.gradoMostrar', [
+        return view('direccion.grado.gradoMostrar', [
             'modulo'  => $this->modulo,
             'grado'    => $oGrado
         ]);
@@ -106,7 +106,7 @@ class GradoController extends ModDireccionController
     {
         $oGrado = Grado::findOrFail($id);
         
-        return view('setting.grado.gradoEditar', [
+        return view('direccion.grado.gradoEditar', [
             'modulo' => $this->modulo,
             'grado' => $oGrado
         ]);

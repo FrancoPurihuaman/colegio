@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\setting;
+namespace App\Http\Requests\direccion;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GradoRequest extends FormRequest
+class ColegioRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,10 @@ class GradoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'            => 'required|max:20',
-            'descripcion'       => 'present|max:255'
+            'codigo_modular'    => 'required|max:20',
+            'nombre'            => 'required|max:80',
+            'director'          => 'required|max:80',
+            'logo'              => 'nullable|image|mimes:jpg,jpeg,png'
         ];
     }
 }
