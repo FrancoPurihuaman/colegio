@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\direccion;
 
 use App\Traits\PaginatorLimitsFromTo;
 use Illuminate\Http\Request;
 use App\Http\Requests\setting\GradoRequest;
 use App\Models\Grado;
 
-class GradoController extends Controller
+class GradoController extends ModDireccionController
 {
     use PaginatorLimitsFromTo;
-    
-    protected $modulo = 'configuracion';
     
     
     /**

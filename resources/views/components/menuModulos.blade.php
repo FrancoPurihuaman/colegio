@@ -12,19 +12,19 @@
     <div class="f_menu_modules__table">
         <ul id="menuModulesList">
             <li class="f_menu_modules__item">
-                <a href="{{ route('setting.home') }}">
+                <a href="{{ route('direccion.home') }}">
                     <span class="f_menu_modules__logoItem" style="color: #a55858;">
-                        <i class="fas fa-cog"></i>
+                        <i class="fas fa-laptop-house"></i>
                     </span>
-                    <div class="f_menu_modules__description">Configuración</div>
+                    <div class="f_menu_modules__description">Dirección</div>
                 </a>
             </li>
             <li class="f_menu_modules__item">
-                <a href="#">
+                <a href="{{ route('academia.home') }}">
                     <span class="f_menu_modules__logoItem" style="color: #c5bb78;">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </span>
-                    <div class="f_menu_modules__description">Grupos</div>
+                    <div class="f_menu_modules__description">Actividad Académica</div>
                 </a>
             </li>
             <li class="f_menu_modules__item">

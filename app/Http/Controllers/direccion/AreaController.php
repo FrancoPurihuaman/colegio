@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\direccion;
 
 use App\Traits\PaginatorLimitsFromTo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\setting\AreaRequest;
 use App\Models\Area;
 
-class AreaController extends Controller
+class AreaController extends ModDireccionController
 {
     use PaginatorLimitsFromTo;
-    
-    protected $modulo = 'configuracion';
     
     
     /**

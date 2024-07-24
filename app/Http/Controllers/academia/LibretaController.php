@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\academia;
 
 use Illuminate\Http\Request;
 use App\Traits\PaginatorLimitsFromTo;
 use App\Models\Clase;
+use App\Http\Controllers\direccion\ModDireccionController;
 
-class LibretaController extends Controller
+class LibretaController extends ModDireccionController
 {
     use PaginatorLimitsFromTo;
     

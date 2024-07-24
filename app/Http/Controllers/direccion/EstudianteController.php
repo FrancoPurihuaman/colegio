@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\direccion;
 
 use App\Traits\PaginatorLimitsFromTo;
 use Illuminate\Http\Request;
@@ -8,11 +8,9 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Estudiante;
 use App\Http\Requests\setting\EstudianteRequest;
 
-class EstudianteController extends Controller
+class EstudianteController extends ModDireccionController
 {
     use PaginatorLimitsFromTo;
-    
-    protected $modulo = 'configuracion';
     
     
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\direccion;
 
 use Illuminate\Http\Request;
 use App\Models\Estudiante;
@@ -8,11 +8,8 @@ use App\Models\Profesor;
 use App\Models\Area;
 use App\Models\Grado;
 
-class ModSettingController extends Controller
+class DireccionHomeController extends ModDireccionController
 {
-    
-    protected $modulo = 'configuracion';
-    
     
     /**
      * Display a listing of the resource.

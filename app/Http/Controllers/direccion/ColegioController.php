@@ -1,18 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\direccion;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
 use App\Models\Colegio;
 use App\Http\Requests\setting\ColegioRequest;
 
-class ColegioController extends Controller
+class ColegioController extends ModDireccionController
 {
-    
-    protected $modulo = 'configuracion';
-    
     
     /**
      * Display a listing of the resource.

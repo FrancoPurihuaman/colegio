@@ -1,21 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\direccion;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
 use App\Models\Profesor;
 use App\Http\Requests\setting\ProfesorRequest;
 use App\Traits\PaginatorLimitsFromTo;
 
 
-
-class ProfesorController extends Controller
+class ProfesorController extends ModDireccionController
 {
     use PaginatorLimitsFromTo;
-    
-    protected $modulo = 'configuracion';
     
     
     /**

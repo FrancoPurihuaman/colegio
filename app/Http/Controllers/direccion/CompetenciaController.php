@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\direccion;
 
 use App\Traits\PaginatorLimitsFromTo;
 use Illuminate\Http\Request;
@@ -8,11 +8,9 @@ use App\Http\Requests\setting\CompetenciaRequest;
 use App\Models\Competencia;
 use App\Models\Area;
 
-class CompetenciaController extends Controller
+class CompetenciaController extends ModDireccionController
 {
     use PaginatorLimitsFromTo;
-    
-    protected $modulo = 'configuracion';
     
     
     /**
